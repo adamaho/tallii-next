@@ -9,11 +9,15 @@
   },
   "dependencies": {
     "autoprefixer": "10.1.0",
+    "formik": "2.2.6",
+    "framer-motion": "3.1.1",
     "next": "10.0.4",
     "postcss": "8.2.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "tailwindcss": "2.0.2"
+    "react-query": "3.5.6",
+    "tailwindcss": "2.0.2",
+    "yup": "0.32.8"
   },
   "devDependencies": {
     "@types/node": "14.14.17",

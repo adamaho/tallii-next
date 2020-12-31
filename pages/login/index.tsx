@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Link from "next/link";
 
 import {LogoSmall} from "../../components/icons/LogoSmall";
-import {Form} from "./_form";
+import {Form} from "./_loginForm";
 
 export default function Login() {
     return (
@@ -19,7 +19,7 @@ export default function Login() {
                 <p className="text-gray-500 mt-1">What is your email and password?</p>
                 <Form />
             </div>
-            <p className="text-center text-gray-50 mb-12">
+            <p className="text-center text-gray-50 text-xs mb-12">
                 Don't have an account? <Link href="/signup"><strong>Signup</strong></Link>
             </p>
         </div>

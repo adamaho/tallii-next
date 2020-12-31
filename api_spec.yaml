@@ -1,0 +1,1144 @@
+openapi: "3.0.0"
+info:
+  version: "0.2"
+  title: Tallii API
+paths:
+  /api/v1/login:
+    post:
+      operationId: login
+      description: Logs a user in if the provided credentials are correct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        200:
+          description: The jwt token for the session of the user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/signup:
+    post:
+      operationId: signup
+      description: Signs a user in if the provided credentials are correct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignupRequest'
+      responses:
+        200:
+          description: The jwt token for the session of the user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/invite-codes/{invite_code}:
+    get:
+      operationId: checkInviteCode
+      description: Checks if the provided invite code is valid and not taken
+      parameters:
+        - name: invite_code
+          in: path
+          required: true
+          description: The invite_code to check
+          schema:
+            type: string
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/users/{username}:
+    get:
+      operationId: getUserByUsername
+      description: Gets a user matching the provided username
+      parameters:
+        - name: username
+          in: path
+          required: true
+          description: The username of the user to get
+          schema:
+            type: string
+      responses:
+        200:
+          description: The user that matches the provided username
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/users/check-email/{email}:
+    get:
+      operationId: checkUserEmail
+      description: Checks if the provided email is taken
+      parameters:
+        - name: email
+          in: path
+          required: true
+          description: The email of the user to get
+          schema:
+            type: string
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/users/check-username/{username}:
+    get:
+      operationId: checkUsername
+      description: Checks if the provided username is taken
+      parameters:
+        - name: username
+          in: path
+          required: true
+          description: The username of the user to get
+          schema:
+            type: string
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/users/{username}/followers:
+    get:
+      operationId: getUserFollowers
+      description: Gets the followers of the specified username
+      parameters:
+        - name: username
+          in: path
+          required: true
+          description: The username of the user to get the followers for
+          schema:
+            type: string
+      responses:
+        200:
+          description: The followers of the user matching the username
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/users/{username}/following:
+    get:
+      operationId: getUserFollowing
+      description: Gets the users that the matching user is following
+      parameters:
+        - name: username
+          in: path
+          required: true
+          description: The username of the user to get the followers for
+          schema:
+            type: string
+      responses:
+        200:
+          description: The followers of the user matching the username
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/users/{username}/events:
+    get:
+      operationId: getUserEvents
+      description: Gets the events of the user matching the username
+      parameters:
+        - name: username
+          in: path
+          required: true
+          description: The username of the user to get the events for
+          schema:
+            type: string
+      responses:
+        200:
+          description: The followers of the user matching the username
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/me:
+    get:
+      operationId: getMe
+      description: Gets the currently logged in user
+      responses:
+        200:
+          description: The currently logged in user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/me/followers:
+    get:
+      operationId: getMeFollowers
+      description: Gets the followers of the currently logged in user
+      responses:
+        200:
+          description: The followers of the currently logged in user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/me/following:
+    get:
+      operationId: getMeFollowing
+      description: Gets the users that the currently logged in user is following
+      responses:
+        200:
+          description: The users that the currently logged in user is following
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/me/follow/{username}:
+    put:
+      operationId: followUser
+      description: Follows the provided user matching the username
+      parameters:
+        - name: username
+          in: path
+          required: true
+          description: The username to follow
+          schema:
+            type: string
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/me/following/{username}:
+    delete:
+      operationId: unfollowUser
+      description: Unfollows the provided user matching the username
+      parameters:
+        - name: username
+          in: path
+          required: true
+          description: The username to unfollow
+          schema:
+            type: string
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/me/events:
+    get:
+      operationId: getMeEvents
+      description: Gets the events that the currently logged in user is a member of
+      responses:
+        200:
+          description: The events that the currently logged in user is a member of
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/me/events/invitations:
+    get:
+      operationId: getMeEventInvitations
+      description: Gets the invites to events of the currently logged in user
+      responses:
+        200:
+          description: The invites to events of the currently logged in user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events:
+    post:
+      operationId: createEvent
+      description: Creates an event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEventRequest'
+      responses:
+        201:
+          description: The event was created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateEventResponse'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}:
+    get:
+      operationId: getEvent
+      description: Gets an event that matches the provided event_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to get
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: The event that matches the provided event_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+    patch:
+      operationId: updateEvent
+      description: Updates the event that matches the provided event_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to update
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEventRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+    delete:
+      operationId: deleteEvent
+      description: Deletes the event that matches the provided event_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to delete
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}/members:
+    get:
+      operationId: getEventMembers
+      description: The members associated with the provided event
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to get the members of
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: The members associated with the provided event
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}/invitations:
+    post:
+      operationId: inviteEventMember
+      description: Invites a member to the provided event
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to get the members of
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InviteMemberRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}/members/{user_id}:
+    patch:
+      operationId: updateEventMember
+      description: Update a member that matches the provided user_id and event_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event_id the member is a part of
+          schema:
+            type: number
+        - name: user_id
+          in: path
+          required: true
+          description: The user_id of the member to update
+          schema:
+            type: integer
+            format: i32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMemberRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        500:
+          $ref: '#/components/responses/InternalError'
+    delete:
+      operationId: removeEventMember
+      description: Removes a member from the provided event
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event_id the member is a part of
+          schema:
+            type: integer
+            format: int32
+        - name: user_id
+          in: path
+          required: true
+          description: The username of the member to update
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        401:
+          $ref: '#/components/responses/NotAuthenticated'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}/teams:
+    get:
+      operationId: getEventTeams
+      description: The teams associated with the provided event
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to get the teams of
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: The teams associated with the provided event
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Team'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+    post:
+      operationId: createEventTeam
+      description: Creates a team
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to create team in
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTeamRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}/teams/{team_id}:
+    patch:
+      operationId: updateEventTeam
+      description: Updates the team that matches the provided event_id and team_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to update the team in
+          schema:
+            type: integer
+            format: int32
+        - name: team_id
+          in: path
+          required: true
+          description: The team to update
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTeamRequest'
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        500:
+          $ref: '#/components/responses/InternalError'
+    delete:
+      operationId: deleteEventTeam
+      description: Deletes the team that matches the provided event_id and team_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to delete the team in
+          schema:
+            type: integer
+            format: int32
+        - name: team_id
+          in: path
+          required: true
+          description: The team to delete
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}/teams/{team_id}/members:
+    get:
+      operationId: getEventTeamMembers,
+      description: Gets team members that matches the provided event_id and team_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to get the team of
+          schema:
+            type: number
+        - name: team_id
+          in: path
+          required: true
+          description: The team to get the members of
+          schema:
+            type: number
+      responses:
+        200:
+          description: The team members that matches the provided event_id and team_id
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/events/{event_id}/teams/{team_id}/members/{user_id}:
+    delete:
+      operationId: removeEventTeamMember
+      description: Deletes the team member matching the provided user_id
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to get the team of
+          schema:
+            type: integer
+            format: int32
+        - name: team_id
+          in: path
+          required: true
+          description: The team to get the members of
+          schema:
+            type: integer
+            format: int32
+        - name: user_id
+          in: path
+          required: true
+          description: The user_id to delete
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        500:
+          $ref: '#/components/responses/InternalError'
+    put:
+      operationId: addEventTeamMember
+      description: Adds the team member matching the provided username to the team
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          description: The event to get the team of
+          schema:
+            type: integer
+            format: int32
+        - name: team_id
+          in: path
+          required: true
+          description: The team to get the members of
+          schema:
+            type: integer
+            format: int32
+        - name: user_id
+          in: path
+          required: true
+          description: The username to add
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          $ref: '#/components/responses/Success'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        403:
+          $ref: '#/components/responses/NotAuthorized'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+  /api/v1/search/users:
+    get:
+      operationId: searchUsers
+      description: Searches users that match the provided username
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: The partial username string to search for
+          schema:
+            type: string
+      responses:
+        200:
+          description: The users that match the partial username string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        500:
+          $ref: '#/components/responses/InternalError'
+
+components:
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  responses:
+    Success:
+      description: Successfully finished request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Success'
+
+    NotAuthenticated:
+      description: Not authenticated
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    NotAuthorized:
+      description: Not authorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    InternalError:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    UpdateEventRequest:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+
+    CreateEventRequest:
+      description: A create event request.
+      type: object
+      required:
+        - name
+        - members
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        members:
+          type: array
+          items:
+            type: integer
+            format: int32
+
+    CreateEventResponse:
+      description: The response of a successfully created event.
+      type: object
+      required:
+        - event_id
+      properties:
+        event_id:
+          type: integer
+          format: int32
+
+    CreateTeamRequest:
+      description: The request required to create a team
+      type: object
+      required:
+        - name
+        - members
+      properties:
+        name:
+          type: string
+        members:
+          type: array
+          items:
+            type: integer
+            format: int32
+
+    UpdateTeamRequest:
+      description: The request required to update a team
+      type: object
+      required:
+        - name
+        - score
+        - winner
+      properties:
+        name:
+          type: string
+        score:
+          type: integer
+          format: int32
+        winner:
+          type: boolean
+
+    InviteMemberRequest:
+      description: The request required to invite a member to the event
+      type: object
+      required:
+        - user_id
+      properties:
+        user_id:
+          type: integer
+          format: int32
+
+    UpdateMemberRequest:
+      description: The request required to update a member to the event
+      type: object
+      required:
+        - state
+        - role
+      properties:
+        state:
+          type: string
+          enum:
+            - pending
+            - declined
+            - active
+        role:
+          type: string
+          enum:
+            - member
+            - admin
+
+    Success:
+      description: An successful request.
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+
+    Error:
+      description: An error has occurred.
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+
+    Event:
+      description: An event.
+      type: object
+      required:
+        - event_id
+        - name
+        - description
+        - creator_user_id
+        - creator_username
+        - created_at
+      properties:
+        event_id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        creator:
+          $ref: '#/components/schemas/User'
+        created_at:
+          type: string
+          format: date-time
+
+    Friend:
+      description: A friend of the currently logged in user.
+      type: object
+      required:
+        - user_id
+        - username
+        - avatar
+        - taunt
+        - created_at
+      properties:
+        user_id:
+          type: integer
+          format: int32
+        username:
+          type: string
+        avatar:
+          type: string
+          nullable: true
+        taunt:
+          type: string
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+
+    LoginRequest:
+      description: The body of the login request
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+
+    SignupRequest:
+      description: The body of the signup request
+      type: object
+      required:
+        - email
+        - username
+        - password
+        - invite_code
+      properties:
+        email:
+          type: string
+          format: email
+        username:
+          type: string
+        invite_code:
+          type: string
+        password:
+          type: string
+          format: password
+
+    Team:
+      description: A team that is part of an event.
+      type: object
+      required:
+        - team_id
+        - event_id
+        - name
+        - score
+        - winner
+        - created_at
+      properties:
+        team_id:
+          type: integer
+          format: int32
+        event_id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        score:
+          type: integer
+          format: int32
+        winner:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+
+    Token:
+      description: A jwt token.
+      type: object
+      required:
+        - token
+      properties:
+        token:
+          type: string
+
+    Me:
+      description: A person that is logged in to tallii.
+      type: object
+      required:
+        - user_id
+        - avatar
+        - email
+        - invite_code
+        - username
+        - taunt
+        - verified
+      properties:
+        user_id:
+          type: integer
+          format: int32
+        avatar:
+          type: string
+          nullable: true
+        email:
+          type: string
+          format: email
+        invite_code:
+          type: string
+        username:
+          type: string
+        taunt:
+          type: string
+          nullable: true
+        verified:
+          type: boolean
+          nullable: true
+
+    User:
+      description: A person that is logged in to tallii.
+      type: object
+      required:
+        - user_id
+        - avatar
+        - username
+        - taunt
+      properties:
+        user_id:
+          type: integer
+          format: int32
+        avatar:
+          type: string
+          nullable: true
+        username:
+          type: string
+        taunt:
+          type: string
+          nullable: true
