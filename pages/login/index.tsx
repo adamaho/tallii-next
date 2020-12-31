@@ -1,0 +1,27 @@
+import * as React from "react";
+
+import Head from 'next/head'
+import Link from "next/link";
+
+import {LogoSmall} from "../../components/icons/LogoSmall";
+import {Form} from "./_form";
+
+export default function Login() {
+    return (
+        <div className="h-full w-full p-4 flex flex-col justify-between">
+            <Head>
+                <title>Tallii - Login</title>
+            </Head>
+
+            <div className="mt-10">
+                <LogoSmall />
+                <h1 className="text-gray-50 font-bold text-4xl mt-3">Login</h1>
+                <p className="text-gray-500 mt-1">What is your email and password?</p>
+                <Form />
+            </div>
+            <p className="text-center text-gray-50 mb-12">
+                Don't have an account? <Link href="/signup"><strong>Signup</strong></Link>
+            </p>
+        </div>
+    );
+}
