@@ -9,7 +9,7 @@ import { useMutation } from "react-query";
 
 import { talliiAPI } from "../../api";
 import {LoginOperationRequest, Token} from "../../api/tallii";
-import {Input, Validation} from "../../components";
+import {Icon, Input, Validation} from "../../components";
 import { setAuthCookies } from "../../utils";
 
 // init the api client instance
@@ -25,12 +25,11 @@ const validationSchema = yup.object().shape({
 });
 
 export const Form: React.FunctionComponent = () => {
-
     // init instance of router
     const router = useRouter();
 
     // init login mutation
-    const { mutate: login } = useMutation((request: LoginOperationRequest) => api.login.call(api, request), {
+    const { mutate: login, isLoading} = useMutation((request: LoginOperationRequest) => api.login.call(api, request), {
         onSuccess: (data: Token) => {
             // set the auth cookies
             setAuthCookies(data);
@@ -66,6 +65,8 @@ export const Form: React.FunctionComponent = () => {
                 const emailError = (formik.submitCount > 0 && formik.touched.email && formik.errors.email);
                 const passwordError = (formik.submitCount > 0 && formik.touched.password && formik.errors.password);
 
+                console.log(formik.isSubmitting);
+
                 return (
                     <form onSubmit={formik.handleSubmit} className="mt-12">
                         <Validation
@@ -93,7 +94,9 @@ export const Form: React.FunctionComponent = () => {
                             </Link>
                         </div>
                         <Validation>
-                            <button type="submit" className="block text-gray-900 bg-gray-50 mt-12 py-2 w-full rounded-md font-semibold">Login</button>
+                            <button type="submit" className="block text-gray-900 text-sm bg-gray-50 mt-12 py-3 w-full rounded-md font-semibold flex items-center justify-center">
+                                {isLoading ? <Icon.Loading /> : "Login"}
+                            </button>
                         </Validation>
                     </form>
                 );
