@@ -30,7 +30,7 @@ export const Validation: React.FunctionComponent<ValidationProps> = ({
                         }}
                         transition={{ duration: 0.15 }}
                     >
-                        <p className="bg-yellow-400 bg-opacity-20 text-yellow-400 rounded-md mt-2 py-1 px-2 overflow-ellipsis overflow-hidden">
+                        <p className="bg-yellow-400 bg-opacity-20 text-yellow-400 text-xs rounded-md mt-2 py-1 px-2 overflow-ellipsis overflow-hidden">
                             {errors}
                         </p>
                     </motion.div>

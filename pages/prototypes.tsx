@@ -3,6 +3,14 @@ import * as React from "react";
 import Head from 'next/head'
 import Link from "next/link";
 
+export async function getServerSideProps(context) {
+    console.log(context.req.cookies);
+
+    return {
+        props: {}, // will be passed to the page component as props
+    }
+}
+
 export default function Prototypes() {
 
     const [pressed, setPressed] = React.useState(false);
