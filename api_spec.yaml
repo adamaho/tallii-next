@@ -992,7 +992,6 @@ components:
           $ref: '#/components/schemas/User'
         created_at:
           type: string
-          format: date-time
 
     Friend:
       description: A friend of the currently logged in user.

@@ -8,7 +8,8 @@ import { config as appConfig } from "../constants";
 const fetchWithToken = (url: string, options?: RequestInit) => {
     // const token = getToken();
 
-    const token = "";
+    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRhbWFobyIsImV4cCI6MTYxMDIyOTQxN30.sG59-sriYQ6VEkCp-8ZPo5czzf7JloscVwkskbAg4Cw";
+
     // gather the options
     const fetchOptions = {
         ...options,

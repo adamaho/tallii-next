@@ -47,10 +47,10 @@ export interface Event {
   creator?: User;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof Event
    */
-  createdAt: Date;
+  createdAt: string;
 }
 
 export function EventFromJSON(json: any): Event {
@@ -71,7 +71,7 @@ export function EventFromJSONTyped(
     creator: !exists(json, "creator")
       ? undefined
       : UserFromJSON(json["creator"]),
-    createdAt: new Date(json["created_at"]),
+    createdAt: json["created_at"],
   };
 }
 
@@ -87,6 +87,6 @@ export function EventToJSON(value?: Event | null): any {
     name: value.name,
     description: value.description,
     creator: UserToJSON(value.creator),
-    created_at: value.createdAt.toISOString(),
+    created_at: value.createdAt,
   };
 }

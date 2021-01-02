@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Link from "next/link";
 import {LogoLarge} from "../components/icons/LogoLarge";
 
-export default function Home() {
+export default function Welcome() {
     return (
         <div className="h-full w-full p-4">
             <Head>

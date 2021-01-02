@@ -65,8 +65,6 @@ export const Form: React.FunctionComponent = () => {
                 const emailError = (formik.submitCount > 0 && formik.touched.email && formik.errors.email);
                 const passwordError = (formik.submitCount > 0 && formik.touched.password && formik.errors.password);
 
-                console.log(formik.isSubmitting);
-
                 return (
                     <form onSubmit={formik.handleSubmit} className="mt-12">
                         <Validation
