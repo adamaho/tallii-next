@@ -30,7 +30,13 @@ export interface Me {
    * @type {string}
    * @memberof Me
    */
-  avatar: string | null;
+  emoji?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof Me
+   */
+  bgColor?: string | null;
   /**
    *
    * @type {string}
@@ -54,7 +60,7 @@ export interface Me {
    * @type {string}
    * @memberof Me
    */
-  taunt: string | null;
+  bio?: string | null;
   /**
    *
    * @type {boolean}
@@ -73,11 +79,12 @@ export function MeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Me {
   }
   return {
     userId: json["user_id"],
-    avatar: json["avatar"],
+    emoji: !exists(json, "emoji") ? undefined : json["emoji"],
+    bgColor: !exists(json, "bg_color") ? undefined : json["bg_color"],
     email: json["email"],
     inviteCode: json["invite_code"],
     username: json["username"],
-    taunt: json["taunt"],
+    bio: !exists(json, "bio") ? undefined : json["bio"],
     verified: json["verified"],
   };
 }
@@ -91,11 +98,12 @@ export function MeToJSON(value?: Me | null): any {
   }
   return {
     user_id: value.userId,
-    avatar: value.avatar,
+    emoji: value.emoji,
+    bg_color: value.bgColor,
     email: value.email,
     invite_code: value.inviteCode,
     username: value.username,
-    taunt: value.taunt,
+    bio: value.bio,
     verified: value.verified,
   };
 }

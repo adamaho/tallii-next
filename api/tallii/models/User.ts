@@ -30,7 +30,13 @@ export interface User {
    * @type {string}
    * @memberof User
    */
-  avatar: string | null;
+  emoji: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof User
+   */
+  bgColor: string | null;
   /**
    *
    * @type {string}
@@ -42,7 +48,7 @@ export interface User {
    * @type {string}
    * @memberof User
    */
-  taunt: string | null;
+  bio: string | null;
 }
 
 export function UserFromJSON(json: any): User {
@@ -58,9 +64,10 @@ export function UserFromJSONTyped(
   }
   return {
     userId: json["user_id"],
-    avatar: json["avatar"],
+    emoji: json["emoji"],
+    bgColor: json["bg_color"],
     username: json["username"],
-    taunt: json["taunt"],
+    bio: json["bio"],
   };
 }
 
@@ -73,8 +80,9 @@ export function UserToJSON(value?: User | null): any {
   }
   return {
     user_id: value.userId,
-    avatar: value.avatar,
+    emoji: value.emoji,
+    bg_color: value.bgColor,
     username: value.username,
-    taunt: value.taunt,
+    bio: value.bio,
   };
 }

@@ -7,6 +7,6 @@ interface ParagraphProps extends React.InputHTMLAttributes<HTMLParagraphElement>
 
 export const Paragraph: React.FunctionComponent<ParagraphProps> = ({ children, color, className, ...props }) => {
     return (
-        <p {...props} className={`text-md ${color ? color : "text-gray-50"}`}>{children}</p>
+        <p {...props} className={`text-md ${color ? color : "text-gray-50"} ${className}`}>{children}</p>
     );
 }
