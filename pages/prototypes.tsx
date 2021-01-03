@@ -30,7 +30,7 @@ export default function Prototypes() {
                 <div className="flex items-center justify-center h-16 w-16 bg-yellow-100 rounded-full shadow-lg">
                     <p className="text-lg">😀️</p>
                 </div>
-                <button className="bg-blue-500 text-gray-50 px-4 py-2 text-sm font-semibold rounded-md">Follow</button>
+                <button className="btn-blue">Follow</button>
             </div>
             <div>
                 <h1 className="text-gray-50 font-bold text-3xl mt-2">adamaho</h1>

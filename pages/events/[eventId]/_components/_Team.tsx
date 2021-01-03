@@ -30,7 +30,7 @@ export const Team: React.FunctionComponent<TeamProps> = ({ event, team }) => {
         <Link href={`/events/${event.eventId}/teams/${team.teamId}`}>
             <div className={`${isPressed ? "bg-gray-700 first:rounded-tl-lg first:rounded-tr-lg last:rounded-bl-lg last:rounded-br-lg" : ""} p-3 flex items-center justify-between`} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
                 <div className="overflow-hidden">
-                    <ParagraphSmall color="text-gray-50" className="font-semibold truncate">{team.name}</ ParagraphSmall>
+                    <h6 className="h6 font-semibold truncate">{team.name}</h6>
                     <div className="flex items-center mt-2">
                         {teamMembers && teamMembers.map((tm, idx) => (
                             <Avatar key={tm.userId} className={idx !== 0 ? "-ml-2" : ""} bgColor={tm.bgColor} emoji={tm.emoji} circleSize="5" emojiSize="0.6em" />
@@ -38,9 +38,9 @@ export const Team: React.FunctionComponent<TeamProps> = ({ event, team }) => {
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <Heading3 className="pl-6">
+                    <h3 className="h3 pl-6">
                         {team.score}
-                    </Heading3>
+                    </h3>
                     <Icon.ChevronRight className="-mr-2 text-gray-500" />
                 </div>
             </div>

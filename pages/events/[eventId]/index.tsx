@@ -64,14 +64,14 @@ const EventMembers: React.FunctionComponent<EventProps> = ({event, members}) => 
             return (
                 <>
                     <Avatar className="mr-1" bgColor={event.creator.bgColor} emoji={event.creator.emoji} emojiSize="0.75rem" circleSize="7" />
-                    <ParagraphSmall>{event.creator.username}</ParagraphSmall>
+                    <p className="ps">{event.creator.username}</p>
                 </>
             );
         } else if (members.length === 1) {
             return (
                 <>
                     <Avatar className="mr-1" bgColor={members[0].bgColor} emoji={members[0].emoji} emojiSize="0.75rem" circleSize="7" />
-                    <ParagraphSmall>{members[0].username}</ParagraphSmall>
+                    <p className="ps">{members[0].username}</p>
                 </>
             );
         } else {
@@ -82,7 +82,7 @@ const EventMembers: React.FunctionComponent<EventProps> = ({event, members}) => 
                         users={[...members].splice(0, 4)}
                     />
                     <div className="flex items-center">
-                        <ParagraphSmall>{members.length} Members</ParagraphSmall>
+                        <p className="ps">{members.length} Members</p>
                         <Icon.ChevronRight className="text-gray-500 -ml-1" />
                     </div>
                 </>
@@ -113,8 +113,8 @@ const Event: React.FunctionComponent<EventProps> = ({ event, members }) => {
                 <ChevronLeft className="text-gray-50" size="40" />
             </div>
             <EventMembers event={event} members={members} />
-            <Heading2>{event.name}</Heading2>
-            <Paragraph className="mt-2">{event.description}</Paragraph>
+            <h2 className="h2">{event.name}</h2>
+            <p className="p mt-2">{event.description}</p>
             <div>
                 <Teams event={event} members={members} />
             </div>
