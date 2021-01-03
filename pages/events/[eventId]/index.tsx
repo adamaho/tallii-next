@@ -11,6 +11,7 @@ import {Paragraph} from "../../../components";
 import {decodeCookie} from "../../../utils";
 import {ChevronLeft} from "../../../components/icons/ChevronLeft";
 import {useRouter} from "next/router";
+import {Teams} from "./_components/_Teams";
 
 interface EventProps {
     event: EventType;
@@ -56,6 +57,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     }
 }
 
+/// Event Members display at the top of the screen
 const EventMembers: React.FunctionComponent<EventProps> = ({event, members}) => {
     const children = React.useMemo(() => {
         if (members.length === 0) {
@@ -94,9 +96,10 @@ const EventMembers: React.FunctionComponent<EventProps> = ({event, members}) => 
                 {children}
             </div>
         </Link>
-    )
+    );
 }
 
+/// Event
 const Event: React.FunctionComponent<EventProps> = ({ event, members }) => {
     const router = useRouter();
 
@@ -112,6 +115,9 @@ const Event: React.FunctionComponent<EventProps> = ({ event, members }) => {
             <EventMembers event={event} members={members} />
             <Heading2>{event.name}</Heading2>
             <Paragraph className="mt-2">{event.description}</Paragraph>
+            <div>
+                <Teams event={event} members={members} />
+            </div>
         </div>
     );
 }
