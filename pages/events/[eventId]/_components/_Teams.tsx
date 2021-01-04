@@ -35,7 +35,7 @@ export const Teams: React.FunctionComponent<TeamsProps> = ({ event, members }) =
     }
 
     return (
-        <div className="grid grid-cols-1 gap-x-4 bg-gray-800 rounded-lg divide-y divide-gray-700 mt-8">
+        <div className="bg-gray-800 rounded-lg divide-y divide-gray-700 mt-8">
             {teams.map((t) => (
                 <Team key={t.teamId} team={t} event={event} />
             ))}

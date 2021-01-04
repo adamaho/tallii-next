@@ -5,6 +5,7 @@ import { ExclamationCircle } from "./ExclamationCircle";
 import { Loading } from "./Loading";
 import { LogoLarge } from "./LogoLarge";
 import { LogoSmall } from "./LogoSmall";
+import { Plus } from "./Plus";
 
 export const Icon = {
     ChevronRight,
@@ -13,5 +14,6 @@ export const Icon = {
     ExclamationCircle,
     Loading,
     LogoLarge,
-    LogoSmall
+    LogoSmall,
+    Plus
 };
