@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import {Avatar} from "./Avatar";
-import {User} from "../api/tallii";
+import {User} from "../../api/tallii";
 
 interface AvatarCollectionProps {
     users: User[];

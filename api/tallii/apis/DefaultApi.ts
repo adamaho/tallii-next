@@ -126,6 +126,11 @@ export interface GetEventMembersRequest {
   eventId: number;
 }
 
+export interface GetEventTeamRequest {
+  eventId: number;
+  teamId: number;
+}
+
 export interface GetEventTeamMembersRequest {
   eventId: number;
   teamId: number;
@@ -912,6 +917,64 @@ export class DefaultApi extends runtime.BaseAPI {
     requestParameters: GetEventMembersRequest
   ): Promise<Array<User>> {
     const response = await this.getEventMembersRaw(requestParameters);
+    return await response.value();
+  }
+
+  /**
+   * A single team that is associated with an event
+   */
+  async getEventTeamRaw(
+    requestParameters: GetEventTeamRequest
+  ): Promise<runtime.ApiResponse<Team>> {
+    if (
+      requestParameters.eventId === null ||
+      requestParameters.eventId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        "eventId",
+        "Required parameter requestParameters.eventId was null or undefined when calling getEventTeam."
+      );
+    }
+
+    if (
+      requestParameters.teamId === null ||
+      requestParameters.teamId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        "teamId",
+        "Required parameter requestParameters.teamId was null or undefined when calling getEventTeam."
+      );
+    }
+
+    const queryParameters: runtime.HTTPQuery = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    const response = await this.request({
+      path: `/api/v1/events/{event_id}/teams/{team_id}`
+        .replace(
+          `{${"event_id"}}`,
+          encodeURIComponent(String(requestParameters.eventId))
+        )
+        .replace(
+          `{${"team_id"}}`,
+          encodeURIComponent(String(requestParameters.teamId))
+        ),
+      method: "GET",
+      headers: headerParameters,
+      query: queryParameters,
+    });
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TeamFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * A single team that is associated with an event
+   */
+  async getEventTeam(requestParameters: GetEventTeamRequest): Promise<Team> {
+    const response = await this.getEventTeamRaw(requestParameters);
     return await response.value();
   }
 

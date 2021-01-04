@@ -9,7 +9,7 @@ import { useMutation } from "react-query";
 
 import { talliiAPI } from "../../api";
 import {LoginOperationRequest, Token} from "../../api/tallii";
-import {Icon, Input, Validation} from "../../components";
+import {Icon, Input, Validation} from "../../design-system/primitive";
 import { setAuthCookies } from "../../utils";
 
 // init the api client instance

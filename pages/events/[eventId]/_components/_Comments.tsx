@@ -6,7 +6,7 @@ import {useQuery} from "react-query";
 
 import { Event } from "../../../../api/tallii";
 import {talliiAPI} from "../../../../api";
-import { Icon } from "../../../../components";
+import { Icon } from "../../../../design-system/primitive";
 
 interface CommentProps {
     event: Event;
@@ -48,16 +48,12 @@ export const Comments: React.FunctionComponent<CommentProps> = ({ event }) => {
                 </div>
             )
         } else {
-            return (
-                <div>
-                    {comments.map((c) => (
-                        <div className="first:mt-0 mt-2">
-                            <p className="p font-semibold">{c.user.username}</p>
-                            <p className="p">{c.comment}</p>
-                        </div>
-                    ))}
+            return comments.map((c) => (
+                <div key={c.commentId} className="first:mt-0 mt-2">
+                    <p className="p font-semibold">{c.user.username}</p>
+                    <p className="p">{c.comment}</p>
                 </div>
-            );
+            ));
         }
     }, [comments, isError, isLoading]);
 

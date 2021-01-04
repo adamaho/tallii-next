@@ -3,7 +3,7 @@ import * as React from "react";
 import Head from 'next/head'
 import Link from "next/link";
 
-import {LogoSmall} from "../../components/icons/LogoSmall";
+import {LogoSmall} from "../../design-system/primitive/icons/LogoSmall";
 
 export default function Signup() {
     return (

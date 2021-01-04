@@ -1,16 +1,15 @@
 import * as React from "react";
-import {useRouter} from "next/router";
 import {GetServerSidePropsContext} from "next";
 
 import {talliiAPI} from "../../../api";
 import {Event as EventType, User} from "../../../api/tallii";
 
 import {decodeCookie} from "../../../utils";
-import {ChevronLeft} from "../../../components/icons/ChevronLeft";
 
 import {Teams} from "./_components/_Teams";
 import {Members} from "./_components/_Members";
 import {Comments} from "./_components/_Comments";
+import {BackButton} from "../../../design-system";
 
 interface EventProps {
     event: EventType;
@@ -56,19 +55,10 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     }
 }
 
-/// Event
 const Event: React.FunctionComponent<EventProps> = ({ event, members }) => {
-    const router = useRouter();
-
-    const handleBack = React.useCallback(() => {
-        router.back();
-    }, [router]);
-
     return (
         <div className="h-full w-full p-4">
-            <div className="inline-block mb-4" onClick={handleBack}>
-                <ChevronLeft className="text-gray-50 -ml-2" size="40" />
-            </div>
+            <BackButton />
             <Members event={event} members={members} />
             <h2 className="h2">{event.name}</h2>
             <p className="p mt-2">{event.description}</p>

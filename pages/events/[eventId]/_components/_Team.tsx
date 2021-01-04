@@ -5,7 +5,7 @@ import Link from "next/link";
 import {useQuery} from "react-query";
 
 import {Event, Team as TeamType} from "../../../../api/tallii";
-import {Avatar, Icon} from "../../../../components";
+import {Avatar, Icon} from "../../../../design-system/primitive";
 import {talliiAPI} from "../../../../api";
 import {useTouchState} from "../../../../hooks";
 

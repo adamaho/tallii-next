@@ -45,10 +45,10 @@ export interface Friend {
   taunt: string | null;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof Friend
    */
-  createdAt: Date;
+  createdAt: string;
 }
 
 export function FriendFromJSON(json: any): Friend {
@@ -67,7 +67,7 @@ export function FriendFromJSONTyped(
     username: json["username"],
     avatar: json["avatar"],
     taunt: json["taunt"],
-    createdAt: new Date(json["created_at"]),
+    createdAt: json["created_at"],
   };
 }
 
@@ -83,6 +83,6 @@ export function FriendToJSON(value?: Friend | null): any {
     username: value.username,
     avatar: value.avatar,
     taunt: value.taunt,
-    created_at: value.createdAt.toISOString(),
+    created_at: value.createdAt,
   };
 }

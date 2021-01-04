@@ -51,10 +51,10 @@ export interface Team {
   winner: boolean;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof Team
    */
-  createdAt: Date;
+  createdAt: string;
 }
 
 export function TeamFromJSON(json: any): Team {
@@ -74,7 +74,7 @@ export function TeamFromJSONTyped(
     name: json["name"],
     score: json["score"],
     winner: json["winner"],
-    createdAt: new Date(json["created_at"]),
+    createdAt: json["created_at"],
   };
 }
 
@@ -91,6 +91,6 @@ export function TeamToJSON(value?: Team | null): any {
     name: value.name,
     score: value.score,
     winner: value.winner,
-    created_at: value.createdAt.toISOString(),
+    created_at: value.createdAt,
   };
 }

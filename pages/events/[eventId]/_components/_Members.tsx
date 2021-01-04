@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Avatar, AvatarCollection, Icon} from "../../../../components";
+import {Avatar, AvatarCollection, Icon} from "../../../../design-system/primitive";
 import Link from "next/link";
 import {Event as EventType, User} from "../../../../api/tallii";
 

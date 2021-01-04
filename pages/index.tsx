@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Head from 'next/head'
 import Link from "next/link";
-import {LogoLarge} from "../components/icons/LogoLarge";
+import {LogoLarge} from "../design-system/primitive/icons/LogoLarge";
 
 export default function Welcome() {
     return (
