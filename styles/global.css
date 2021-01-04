@@ -3,92 +3,91 @@
 @tailwind utilities;
 
 html {
-    height: 100vh;
-    width: 100vw;
-    font-family: Inter;
-    overscroll-behavior: none;
-    background: #111827;
+  height: 100vh;
+  width: 100vw;
+  font-family: Inter;
+  overscroll-behavior: none;
+  background: #111827;
 }
 
 body {
-    height: 100%;
-    width: 100%;
-    font-family: Inter;
-    overscroll-behavior: none;
-    user-select: none;
-    background: #111827;
+  height: 100%;
+  width: 100%;
+  font-family: Inter;
+  overscroll-behavior: none;
+  user-select: none;
+  background: #111827;
 }
 
 #__next {
-    height: 100%;
-    width: 100%;
-    background: #111827;
+  height: 100%;
+  width: 100%;
+  background: #111827;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button {
-    outline: 0;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 button:focus {
-    outline: 0;
+  outline: 0;
 }
 
-
 @layer components {
-    .btn-primary {
-        @apply py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
-    }
+  .btn-primary {
+    @apply py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
 
-    .btn-danger {
-        @apply py-2 px-4 bg-red-500 bg-opacity-20 text-red-500 font-semibold rounded-lg shadow-md
-    }
+  .btn-danger {
+    @apply py-2 px-4 bg-red-500 bg-opacity-20 text-red-500 font-semibold rounded-lg shadow-md;
+  }
 
-    .card {
-        @apply bg-gray-800 p-2 rounded-lg;
-    }
+  .card {
+    @apply bg-gray-800 p-2 rounded-lg;
+  }
 
-    .view {
-        @apply h-full w-full p-4;
-    }
+  .view {
+    @apply h-full w-full p-4;
+  }
 
-    .list-item-loading {
-        @apply animate-pulse bg-gray-700 h-10 rounded-md;
-    }
+  .list-item-loading {
+    @apply animate-pulse bg-gray-700 h-10 rounded-md;
+  }
 
-    .h1 {
-        @apply text-gray-50 font-bold text-4xl;
-    }
+  .h1 {
+    @apply text-gray-50 font-bold text-4xl;
+  }
 
-    .h2 {
-        @apply text-gray-50 font-bold text-3xl;
-    }
+  .h2 {
+    @apply text-gray-50 font-bold text-3xl;
+  }
 
-    .h3 {
-        @apply text-gray-50 font-bold text-2xl;
-    }
+  .h3 {
+    @apply text-gray-50 font-bold text-2xl;
+  }
 
-    .h4 {
-        @apply text-gray-50 font-bold text-xl;
-    }
+  .h4 {
+    @apply text-gray-50 font-bold text-xl;
+  }
 
-    .h5 {
-        @apply text-gray-50 font-bold text-lg;
-    }
+  .h5 {
+    @apply text-gray-50 font-bold text-lg;
+  }
 
-    .h6 {
-        @apply text-gray-50 font-bold text-sm;
-    }
+  .h6 {
+    @apply text-gray-50 font-bold text-sm;
+  }
 
-    .p {
-        @apply text-gray-50 text-sm;
-    }
+  .p {
+    @apply text-gray-50 text-sm;
+  }
 
-    .ps {
-        @apply text-gray-500 text-xs;
-    }
+  .ps {
+    @apply text-gray-500 text-xs;
+  }
 }

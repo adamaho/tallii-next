@@ -8,12 +8,12 @@ import { LogoSmall } from "./LogoSmall";
 import { Plus } from "./Plus";
 
 export const Icon = {
-    ChevronRight,
-    ChevronLeft,
-    Comment,
-    ExclamationCircle,
-    Loading,
-    LogoLarge,
-    LogoSmall,
-    Plus
+  ChevronRight,
+  ChevronLeft,
+  Comment,
+  ExclamationCircle,
+  Loading,
+  LogoLarge,
+  LogoSmall,
+  Plus,
 };

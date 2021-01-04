@@ -1,3 +1,3 @@
-import {useTouchState} from "./useTouchState";
+import { useTouchState } from "./useTouchState";
 
 export * from "./useTouchState";

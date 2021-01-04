@@ -1,28 +1,30 @@
-
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { Hydrate } from 'react-query/hydration'
+import { QueryClient, QueryClientProvider } from "react-query";
+import { Hydrate } from "react-query/hydration";
 import Head from "next/head";
 
 // import the global styles
 import "../styles/global.css";
 
 // init the query client
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
   return (
-      <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-              <Head>
-                <title>Tallii</title>
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-              </Head>
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <Head>
+          <title>Tallii</title>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
 
-              <Component {...pageProps} />
-          </Hydrate>
-      </QueryClientProvider>
+        <Component {...pageProps} />
+      </Hydrate>
+    </QueryClientProvider>
   );
 }
 
-export default MyApp
+export default MyApp;
