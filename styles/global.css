@@ -44,6 +44,14 @@ button:focus {
         @apply py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 
+    .card {
+        @apply bg-gray-800 p-2 rounded-lg;
+    }
+
+    .list-item-loading {
+        @apply animate-pulse bg-gray-700 h-10 rounded-md;
+    }
+
     .h1 {
         @apply text-gray-50 font-bold text-4xl;
     }

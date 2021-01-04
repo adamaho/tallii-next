@@ -14,14 +14,20 @@ export const Members: React.FunctionComponent<MembersProps> = ({event, members})
             return (
                 <>
                     <Avatar className="mr-1" bgColor={event.creator.bgColor} emoji={event.creator.emoji} emojiSize="0.75rem" circleSize="7" />
-                    <p className="ps">{event.creator.username}</p>
+                    <div className="flex items-center">
+                        <p className="ps">{event.creator.username}</p>
+                        <Icon.ChevronRight className="text-gray-500 -ml-1" />
+                    </div>
                 </>
             );
         } else if (members.length === 1) {
             return (
                 <>
                     <Avatar className="mr-1" bgColor={members[0].bgColor} emoji={members[0].emoji} emojiSize="0.75rem" circleSize="7" />
-                    <p className="ps">{members[0].username}</p>
+                    <div className="flex items-center">
+                        <p className="ps">{members[0].username}</p>
+                        <Icon.ChevronRight className="text-gray-500 -ml-1" />
+                    </div>
                 </>
             );
         } else {

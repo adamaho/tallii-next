@@ -1,4 +1,5 @@
 import * as React from "react";
+import {useRouter} from "next/router";
 import {GetServerSidePropsContext} from "next";
 
 import {talliiAPI} from "../../../api";
@@ -6,9 +7,10 @@ import {Event as EventType, User} from "../../../api/tallii";
 
 import {decodeCookie} from "../../../utils";
 import {ChevronLeft} from "../../../components/icons/ChevronLeft";
-import {useRouter} from "next/router";
+
 import {Teams} from "./_components/_Teams";
 import {Members} from "./_components/_Members";
+import {Comments} from "./_components/_Comments";
 
 interface EventProps {
     event: EventType;
@@ -65,13 +67,14 @@ const Event: React.FunctionComponent<EventProps> = ({ event, members }) => {
     return (
         <div className="h-full w-full p-4">
             <div className="inline-block mb-4" onClick={handleBack}>
-                <ChevronLeft className="text-gray-50" size="40" />
+                <ChevronLeft className="text-gray-50 -ml-2" size="40" />
             </div>
             <Members event={event} members={members} />
             <h2 className="h2">{event.name}</h2>
             <p className="p mt-2">{event.description}</p>
             <div>
                 <Teams event={event} members={members} />
+                <Comments event={event} />
             </div>
         </div>
     );

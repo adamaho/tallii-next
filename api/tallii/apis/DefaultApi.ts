@@ -14,6 +14,9 @@
 
 import * as runtime from "../runtime";
 import {
+  CreateEventCommentRequest,
+  CreateEventCommentRequestFromJSON,
+  CreateEventCommentRequestToJSON,
   CreateEventRequest,
   CreateEventRequestFromJSON,
   CreateEventRequestToJSON,
@@ -26,6 +29,9 @@ import {
   Event,
   EventFromJSON,
   EventToJSON,
+  EventComment,
+  EventCommentFromJSON,
+  EventCommentToJSON,
   InviteMemberRequest,
   InviteMemberRequestFromJSON,
   InviteMemberRequestToJSON,
@@ -80,6 +86,11 @@ export interface CreateEventOperationRequest {
   createEventRequest: CreateEventRequest;
 }
 
+export interface CreateEventCommentOperationRequest {
+  eventId: number;
+  createEventCommentRequest: CreateEventCommentRequest;
+}
+
 export interface CreateEventTeamRequest {
   eventId: number;
   createTeamRequest: CreateTeamRequest;
@@ -87,6 +98,11 @@ export interface CreateEventTeamRequest {
 
 export interface DeleteEventRequest {
   eventId: number;
+}
+
+export interface DeleteEventCommentRequest {
+  eventId: number;
+  commentId: number;
 }
 
 export interface DeleteEventTeamRequest {
@@ -99,6 +115,10 @@ export interface FollowUserRequest {
 }
 
 export interface GetEventRequest {
+  eventId: number;
+}
+
+export interface GetEventCommentsRequest {
   eventId: number;
 }
 
@@ -439,6 +459,66 @@ export class DefaultApi extends runtime.BaseAPI {
   }
 
   /**
+   * Creates a comment on an event.
+   */
+  async createEventCommentRaw(
+    requestParameters: CreateEventCommentOperationRequest
+  ): Promise<runtime.ApiResponse<Success>> {
+    if (
+      requestParameters.eventId === null ||
+      requestParameters.eventId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        "eventId",
+        "Required parameter requestParameters.eventId was null or undefined when calling createEventComment."
+      );
+    }
+
+    if (
+      requestParameters.createEventCommentRequest === null ||
+      requestParameters.createEventCommentRequest === undefined
+    ) {
+      throw new runtime.RequiredError(
+        "createEventCommentRequest",
+        "Required parameter requestParameters.createEventCommentRequest was null or undefined when calling createEventComment."
+      );
+    }
+
+    const queryParameters: runtime.HTTPQuery = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters["Content-Type"] = "application/json";
+
+    const response = await this.request({
+      path: `/api/v1/events/{event_id}/comments`.replace(
+        `{${"event_id"}}`,
+        encodeURIComponent(String(requestParameters.eventId))
+      ),
+      method: "POST",
+      headers: headerParameters,
+      query: queryParameters,
+      body: CreateEventCommentRequestToJSON(
+        requestParameters.createEventCommentRequest
+      ),
+    });
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SuccessFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Creates a comment on an event.
+   */
+  async createEventComment(
+    requestParameters: CreateEventCommentOperationRequest
+  ): Promise<Success> {
+    const response = await this.createEventCommentRaw(requestParameters);
+    return await response.value();
+  }
+
+  /**
    * Creates a team
    */
   async createEventTeamRaw(
@@ -536,6 +616,66 @@ export class DefaultApi extends runtime.BaseAPI {
    */
   async deleteEvent(requestParameters: DeleteEventRequest): Promise<Success> {
     const response = await this.deleteEventRaw(requestParameters);
+    return await response.value();
+  }
+
+  /**
+   * Deletes the comment with the specified id
+   */
+  async deleteEventCommentRaw(
+    requestParameters: DeleteEventCommentRequest
+  ): Promise<runtime.ApiResponse<Success>> {
+    if (
+      requestParameters.eventId === null ||
+      requestParameters.eventId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        "eventId",
+        "Required parameter requestParameters.eventId was null or undefined when calling deleteEventComment."
+      );
+    }
+
+    if (
+      requestParameters.commentId === null ||
+      requestParameters.commentId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        "commentId",
+        "Required parameter requestParameters.commentId was null or undefined when calling deleteEventComment."
+      );
+    }
+
+    const queryParameters: runtime.HTTPQuery = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    const response = await this.request({
+      path: `/api/v1/events/{event_id}/comments/{comment_id}`
+        .replace(
+          `{${"event_id"}}`,
+          encodeURIComponent(String(requestParameters.eventId))
+        )
+        .replace(
+          `{${"comment_id"}}`,
+          encodeURIComponent(String(requestParameters.commentId))
+        ),
+      method: "DELETE",
+      headers: headerParameters,
+      query: queryParameters,
+    });
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SuccessFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Deletes the comment with the specified id
+   */
+  async deleteEventComment(
+    requestParameters: DeleteEventCommentRequest
+  ): Promise<Success> {
+    const response = await this.deleteEventCommentRaw(requestParameters);
     return await response.value();
   }
 
@@ -682,6 +822,51 @@ export class DefaultApi extends runtime.BaseAPI {
    */
   async getEvent(requestParameters: GetEventRequest): Promise<Event> {
     const response = await this.getEventRaw(requestParameters);
+    return await response.value();
+  }
+
+  /**
+   * Gets the event comments
+   */
+  async getEventCommentsRaw(
+    requestParameters: GetEventCommentsRequest
+  ): Promise<runtime.ApiResponse<Array<EventComment>>> {
+    if (
+      requestParameters.eventId === null ||
+      requestParameters.eventId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        "eventId",
+        "Required parameter requestParameters.eventId was null or undefined when calling getEventComments."
+      );
+    }
+
+    const queryParameters: runtime.HTTPQuery = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    const response = await this.request({
+      path: `/api/v1/events/{event_id}/comments`.replace(
+        `{${"event_id"}}`,
+        encodeURIComponent(String(requestParameters.eventId))
+      ),
+      method: "GET",
+      headers: headerParameters,
+      query: queryParameters,
+    });
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(EventCommentFromJSON)
+    );
+  }
+
+  /**
+   * Gets the event comments
+   */
+  async getEventComments(
+    requestParameters: GetEventCommentsRequest
+  ): Promise<Array<EventComment>> {
+    const response = await this.getEventCommentsRaw(requestParameters);
     return await response.value();
   }
 
