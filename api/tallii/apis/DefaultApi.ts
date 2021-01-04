@@ -14,1960 +14,1972 @@
 
 import * as runtime from "../runtime";
 import {
-  CreateEventCommentRequest,
-  CreateEventCommentRequestFromJSON,
-  CreateEventCommentRequestToJSON,
-  CreateEventRequest,
-  CreateEventRequestFromJSON,
-  CreateEventRequestToJSON,
-  CreateEventResponse,
-  CreateEventResponseFromJSON,
-  CreateEventResponseToJSON,
-  CreateTeamRequest,
-  CreateTeamRequestFromJSON,
-  CreateTeamRequestToJSON,
-  Event,
-  EventFromJSON,
-  EventToJSON,
-  EventComment,
-  EventCommentFromJSON,
-  EventCommentToJSON,
-  InviteMemberRequest,
-  InviteMemberRequestFromJSON,
-  InviteMemberRequestToJSON,
-  LoginRequest,
-  LoginRequestFromJSON,
-  LoginRequestToJSON,
-  SignupRequest,
-  SignupRequestFromJSON,
-  SignupRequestToJSON,
-  Success,
-  SuccessFromJSON,
-  SuccessToJSON,
-  Team,
-  TeamFromJSON,
-  TeamToJSON,
-  Token,
-  TokenFromJSON,
-  TokenToJSON,
-  UpdateEventRequest,
-  UpdateEventRequestFromJSON,
-  UpdateEventRequestToJSON,
-  UpdateMemberRequest,
-  UpdateMemberRequestFromJSON,
-  UpdateMemberRequestToJSON,
-  UpdateTeamRequest,
-  UpdateTeamRequestFromJSON,
-  UpdateTeamRequestToJSON,
-  User,
-  UserFromJSON,
-  UserToJSON,
+    CreateEventCommentRequest,
+    CreateEventCommentRequestFromJSON,
+    CreateEventCommentRequestToJSON,
+    CreateEventRequest,
+    CreateEventRequestFromJSON,
+    CreateEventRequestToJSON,
+    CreateEventResponse,
+    CreateEventResponseFromJSON,
+    CreateEventResponseToJSON,
+    CreateTeamRequest,
+    CreateTeamRequestFromJSON,
+    CreateTeamRequestToJSON,
+    Event,
+    EventFromJSON,
+    EventToJSON,
+    EventComment,
+    EventCommentFromJSON,
+    EventCommentToJSON,
+    InviteMemberRequest,
+    InviteMemberRequestFromJSON,
+    InviteMemberRequestToJSON,
+    LoginRequest,
+    LoginRequestFromJSON,
+    LoginRequestToJSON,
+    SignupRequest,
+    SignupRequestFromJSON,
+    SignupRequestToJSON,
+    Success,
+    SuccessFromJSON,
+    SuccessToJSON,
+    Team,
+    TeamFromJSON,
+    TeamToJSON,
+    Token,
+    TokenFromJSON,
+    TokenToJSON,
+    UpdateEventRequest,
+    UpdateEventRequestFromJSON,
+    UpdateEventRequestToJSON,
+    UpdateMemberRequest,
+    UpdateMemberRequestFromJSON,
+    UpdateMemberRequestToJSON,
+    UpdateTeamRequest,
+    UpdateTeamRequestFromJSON,
+    UpdateTeamRequestToJSON,
+    User,
+    UserFromJSON,
+    UserToJSON,
 } from "../models";
 
 export interface AddEventTeamMemberRequest {
-  eventId: number;
-  teamId: number;
-  userId: number;
+    eventId: number;
+    teamId: number;
+    userId: number;
 }
 
 export interface CheckInviteCodeRequest {
-  inviteCode: string;
+    inviteCode: string;
 }
 
 export interface CheckUserEmailRequest {
-  email: string;
+    email: string;
 }
 
 export interface CheckUsernameRequest {
-  username: string;
+    username: string;
 }
 
 export interface CreateEventOperationRequest {
-  createEventRequest: CreateEventRequest;
+    createEventRequest: CreateEventRequest;
 }
 
 export interface CreateEventCommentOperationRequest {
-  eventId: number;
-  createEventCommentRequest: CreateEventCommentRequest;
+    eventId: number;
+    createEventCommentRequest: CreateEventCommentRequest;
 }
 
 export interface CreateEventTeamRequest {
-  eventId: number;
-  createTeamRequest: CreateTeamRequest;
+    eventId: number;
+    createTeamRequest: CreateTeamRequest;
 }
 
 export interface DeleteEventRequest {
-  eventId: number;
+    eventId: number;
 }
 
 export interface DeleteEventCommentRequest {
-  eventId: number;
-  commentId: number;
+    eventId: number;
+    commentId: number;
 }
 
 export interface DeleteEventTeamRequest {
-  eventId: number;
-  teamId: number;
+    eventId: number;
+    teamId: number;
 }
 
 export interface FollowUserRequest {
-  username: string;
+    username: string;
 }
 
 export interface GetEventRequest {
-  eventId: number;
+    eventId: number;
 }
 
 export interface GetEventCommentsRequest {
-  eventId: number;
+    eventId: number;
 }
 
 export interface GetEventMembersRequest {
-  eventId: number;
+    eventId: number;
 }
 
 export interface GetEventTeamRequest {
-  eventId: number;
-  teamId: number;
+    eventId: number;
+    teamId: number;
 }
 
 export interface GetEventTeamMembersRequest {
-  eventId: number;
-  teamId: number;
+    eventId: number;
+    teamId: number;
 }
 
 export interface GetEventTeamsRequest {
-  eventId: number;
+    eventId: number;
 }
 
 export interface GetUserByUsernameRequest {
-  username: string;
+    username: string;
 }
 
 export interface GetUserEventsRequest {
-  username: string;
+    username: string;
 }
 
 export interface GetUserFollowersRequest {
-  username: string;
+    username: string;
 }
 
 export interface GetUserFollowingRequest {
-  username: string;
+    username: string;
 }
 
 export interface InviteEventMemberRequest {
-  eventId: number;
-  inviteMemberRequest: InviteMemberRequest;
+    eventId: number;
+    inviteMemberRequest: InviteMemberRequest;
 }
 
 export interface LoginOperationRequest {
-  loginRequest: LoginRequest;
+    loginRequest: LoginRequest;
 }
 
 export interface RemoveEventMemberRequest {
-  eventId: number;
-  userId: number;
+    eventId: number;
+    userId: number;
 }
 
 export interface RemoveEventTeamMemberRequest {
-  eventId: number;
-  teamId: number;
-  userId: number;
+    eventId: number;
+    teamId: number;
+    userId: number;
 }
 
 export interface SearchUsersRequest {
-  q: string;
+    q: string;
 }
 
 export interface SignupOperationRequest {
-  signupRequest: SignupRequest;
+    signupRequest: SignupRequest;
 }
 
 export interface UnfollowUserRequest {
-  username: string;
+    username: string;
 }
 
 export interface UpdateEventOperationRequest {
-  eventId: number;
-  updateEventRequest: UpdateEventRequest;
+    eventId: number;
+    updateEventRequest: UpdateEventRequest;
 }
 
 export interface UpdateEventMemberRequest {
-  eventId: number;
-  userId: number;
-  updateMemberRequest: UpdateMemberRequest;
+    eventId: number;
+    userId: number;
+    updateMemberRequest: UpdateMemberRequest;
 }
 
 export interface UpdateEventTeamRequest {
-  eventId: number;
-  teamId: number;
-  updateTeamRequest: UpdateTeamRequest;
+    eventId: number;
+    teamId: number;
+    updateTeamRequest: UpdateTeamRequest;
 }
 
 /**
  *
  */
 export class DefaultApi extends runtime.BaseAPI {
-  /**
-   * Adds the team member matching the provided username to the team
-   */
-  async addEventTeamMemberRaw(
-    requestParameters: AddEventTeamMemberRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling addEventTeamMember."
-      );
+    /**
+     * Adds the team member matching the provided username to the team
+     */
+    async addEventTeamMemberRaw(
+        requestParameters: AddEventTeamMemberRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling addEventTeamMember."
+            );
+        }
+
+        if (
+            requestParameters.teamId === null ||
+            requestParameters.teamId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "teamId",
+                "Required parameter requestParameters.teamId was null or undefined when calling addEventTeamMember."
+            );
+        }
+
+        if (
+            requestParameters.userId === null ||
+            requestParameters.userId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "userId",
+                "Required parameter requestParameters.userId was null or undefined when calling addEventTeamMember."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams/{team_id}/members/{user_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"team_id"}}`,
+                    encodeURIComponent(String(requestParameters.teamId))
+                )
+                .replace(
+                    `{${"user_id"}}`,
+                    encodeURIComponent(String(requestParameters.userId))
+                ),
+            method: "PUT",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    if (
-      requestParameters.teamId === null ||
-      requestParameters.teamId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "teamId",
-        "Required parameter requestParameters.teamId was null or undefined when calling addEventTeamMember."
-      );
+    /**
+     * Adds the team member matching the provided username to the team
+     */
+    async addEventTeamMember(
+        requestParameters: AddEventTeamMemberRequest
+    ): Promise<Success> {
+        const response = await this.addEventTeamMemberRaw(requestParameters);
+        return await response.value();
     }
 
-    if (
-      requestParameters.userId === null ||
-      requestParameters.userId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "userId",
-        "Required parameter requestParameters.userId was null or undefined when calling addEventTeamMember."
-      );
+    /**
+     * Checks if the provided invite code is valid and not taken
+     */
+    async checkInviteCodeRaw(
+        requestParameters: CheckInviteCodeRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.inviteCode === null ||
+            requestParameters.inviteCode === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "inviteCode",
+                "Required parameter requestParameters.inviteCode was null or undefined when calling checkInviteCode."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/invite-codes/{invite_code}`.replace(
+                `{${"invite_code"}}`,
+                encodeURIComponent(String(requestParameters.inviteCode))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams/{team_id}/members/{user_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"team_id"}}`,
-          encodeURIComponent(String(requestParameters.teamId))
-        )
-        .replace(
-          `{${"user_id"}}`,
-          encodeURIComponent(String(requestParameters.userId))
-        ),
-      method: "PUT",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Adds the team member matching the provided username to the team
-   */
-  async addEventTeamMember(
-    requestParameters: AddEventTeamMemberRequest
-  ): Promise<Success> {
-    const response = await this.addEventTeamMemberRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Checks if the provided invite code is valid and not taken
-   */
-  async checkInviteCodeRaw(
-    requestParameters: CheckInviteCodeRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.inviteCode === null ||
-      requestParameters.inviteCode === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "inviteCode",
-        "Required parameter requestParameters.inviteCode was null or undefined when calling checkInviteCode."
-      );
+    /**
+     * Checks if the provided invite code is valid and not taken
+     */
+    async checkInviteCode(
+        requestParameters: CheckInviteCodeRequest
+    ): Promise<Success> {
+        const response = await this.checkInviteCodeRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Checks if the provided email is taken
+     */
+    async checkUserEmailRaw(
+        requestParameters: CheckUserEmailRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.email === null ||
+            requestParameters.email === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "email",
+                "Required parameter requestParameters.email was null or undefined when calling checkUserEmail."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/invite-codes/{invite_code}`.replace(
-        `{${"invite_code"}}`,
-        encodeURIComponent(String(requestParameters.inviteCode))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/users/check-email/{email}`.replace(
+                `{${"email"}}`,
+                encodeURIComponent(String(requestParameters.email))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Checks if the provided invite code is valid and not taken
-   */
-  async checkInviteCode(
-    requestParameters: CheckInviteCodeRequest
-  ): Promise<Success> {
-    const response = await this.checkInviteCodeRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Checks if the provided email is taken
-   */
-  async checkUserEmailRaw(
-    requestParameters: CheckUserEmailRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.email === null ||
-      requestParameters.email === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "email",
-        "Required parameter requestParameters.email was null or undefined when calling checkUserEmail."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/users/check-email/{email}`.replace(
-        `{${"email"}}`,
-        encodeURIComponent(String(requestParameters.email))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Checks if the provided email is taken
-   */
-  async checkUserEmail(
-    requestParameters: CheckUserEmailRequest
-  ): Promise<Success> {
-    const response = await this.checkUserEmailRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Checks if the provided username is taken
-   */
-  async checkUsernameRaw(
-    requestParameters: CheckUsernameRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.username === null ||
-      requestParameters.username === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "username",
-        "Required parameter requestParameters.username was null or undefined when calling checkUsername."
-      );
+    /**
+     * Checks if the provided email is taken
+     */
+    async checkUserEmail(
+        requestParameters: CheckUserEmailRequest
+    ): Promise<Success> {
+        const response = await this.checkUserEmailRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Checks if the provided username is taken
+     */
+    async checkUsernameRaw(
+        requestParameters: CheckUsernameRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.username === null ||
+            requestParameters.username === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "username",
+                "Required parameter requestParameters.username was null or undefined when calling checkUsername."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/users/check-username/{username}`.replace(
-        `{${"username"}}`,
-        encodeURIComponent(String(requestParameters.username))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/users/check-username/{username}`.replace(
+                `{${"username"}}`,
+                encodeURIComponent(String(requestParameters.username))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Checks if the provided username is taken
-   */
-  async checkUsername(
-    requestParameters: CheckUsernameRequest
-  ): Promise<Success> {
-    const response = await this.checkUsernameRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Creates an event
-   */
-  async createEventRaw(
-    requestParameters: CreateEventOperationRequest
-  ): Promise<runtime.ApiResponse<CreateEventResponse>> {
-    if (
-      requestParameters.createEventRequest === null ||
-      requestParameters.createEventRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "createEventRequest",
-        "Required parameter requestParameters.createEventRequest was null or undefined when calling createEvent."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters["Content-Type"] = "application/json";
-
-    const response = await this.request({
-      path: `/api/v1/events`,
-      method: "POST",
-      headers: headerParameters,
-      query: queryParameters,
-      body: CreateEventRequestToJSON(requestParameters.createEventRequest),
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      CreateEventResponseFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Creates an event
-   */
-  async createEvent(
-    requestParameters: CreateEventOperationRequest
-  ): Promise<CreateEventResponse> {
-    const response = await this.createEventRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Creates a comment on an event.
-   */
-  async createEventCommentRaw(
-    requestParameters: CreateEventCommentOperationRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling createEventComment."
-      );
+    /**
+     * Checks if the provided username is taken
+     */
+    async checkUsername(
+        requestParameters: CheckUsernameRequest
+    ): Promise<Success> {
+        const response = await this.checkUsernameRaw(requestParameters);
+        return await response.value();
     }
 
-    if (
-      requestParameters.createEventCommentRequest === null ||
-      requestParameters.createEventCommentRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "createEventCommentRequest",
-        "Required parameter requestParameters.createEventCommentRequest was null or undefined when calling createEventComment."
-      );
+    /**
+     * Creates an event
+     */
+    async createEventRaw(
+        requestParameters: CreateEventOperationRequest
+    ): Promise<runtime.ApiResponse<CreateEventResponse>> {
+        if (
+            requestParameters.createEventRequest === null ||
+            requestParameters.createEventRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "createEventRequest",
+                "Required parameter requestParameters.createEventRequest was null or undefined when calling createEvent."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/events`,
+            method: "POST",
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateEventRequestToJSON(
+                requestParameters.createEventRequest
+            ),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            CreateEventResponseFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters["Content-Type"] = "application/json";
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/comments`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "POST",
-      headers: headerParameters,
-      query: queryParameters,
-      body: CreateEventCommentRequestToJSON(
-        requestParameters.createEventCommentRequest
-      ),
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Creates a comment on an event.
-   */
-  async createEventComment(
-    requestParameters: CreateEventCommentOperationRequest
-  ): Promise<Success> {
-    const response = await this.createEventCommentRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Creates a team
-   */
-  async createEventTeamRaw(
-    requestParameters: CreateEventTeamRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling createEventTeam."
-      );
+    /**
+     * Creates an event
+     */
+    async createEvent(
+        requestParameters: CreateEventOperationRequest
+    ): Promise<CreateEventResponse> {
+        const response = await this.createEventRaw(requestParameters);
+        return await response.value();
     }
 
-    if (
-      requestParameters.createTeamRequest === null ||
-      requestParameters.createTeamRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "createTeamRequest",
-        "Required parameter requestParameters.createTeamRequest was null or undefined when calling createEventTeam."
-      );
+    /**
+     * Creates a comment on an event.
+     */
+    async createEventCommentRaw(
+        requestParameters: CreateEventCommentOperationRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling createEventComment."
+            );
+        }
+
+        if (
+            requestParameters.createEventCommentRequest === null ||
+            requestParameters.createEventCommentRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "createEventCommentRequest",
+                "Required parameter requestParameters.createEventCommentRequest was null or undefined when calling createEventComment."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/comments`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "POST",
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateEventCommentRequestToJSON(
+                requestParameters.createEventCommentRequest
+            ),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters["Content-Type"] = "application/json";
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "POST",
-      headers: headerParameters,
-      query: queryParameters,
-      body: CreateTeamRequestToJSON(requestParameters.createTeamRequest),
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Creates a team
-   */
-  async createEventTeam(
-    requestParameters: CreateEventTeamRequest
-  ): Promise<Success> {
-    const response = await this.createEventTeamRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Deletes the event that matches the provided event_id
-   */
-  async deleteEventRaw(
-    requestParameters: DeleteEventRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling deleteEvent."
-      );
+    /**
+     * Creates a comment on an event.
+     */
+    async createEventComment(
+        requestParameters: CreateEventCommentOperationRequest
+    ): Promise<Success> {
+        const response = await this.createEventCommentRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Creates a team
+     */
+    async createEventTeamRaw(
+        requestParameters: CreateEventTeamRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling createEventTeam."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (
+            requestParameters.createTeamRequest === null ||
+            requestParameters.createTeamRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "createTeamRequest",
+                "Required parameter requestParameters.createTeamRequest was null or undefined when calling createEventTeam."
+            );
+        }
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "DELETE",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const queryParameters: runtime.HTTPQuery = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Deletes the event that matches the provided event_id
-   */
-  async deleteEvent(requestParameters: DeleteEventRequest): Promise<Success> {
-    const response = await this.deleteEventRaw(requestParameters);
-    return await response.value();
-  }
+        headerParameters["Content-Type"] = "application/json";
 
-  /**
-   * Deletes the comment with the specified id
-   */
-  async deleteEventCommentRaw(
-    requestParameters: DeleteEventCommentRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling deleteEventComment."
-      );
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "POST",
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateTeamRequestToJSON(requestParameters.createTeamRequest),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    if (
-      requestParameters.commentId === null ||
-      requestParameters.commentId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "commentId",
-        "Required parameter requestParameters.commentId was null or undefined when calling deleteEventComment."
-      );
+    /**
+     * Creates a team
+     */
+    async createEventTeam(
+        requestParameters: CreateEventTeamRequest
+    ): Promise<Success> {
+        const response = await this.createEventTeamRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Deletes the event that matches the provided event_id
+     */
+    async deleteEventRaw(
+        requestParameters: DeleteEventRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling deleteEvent."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/comments/{comment_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"comment_id"}}`,
-          encodeURIComponent(String(requestParameters.commentId))
-        ),
-      method: "DELETE",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "DELETE",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Deletes the comment with the specified id
-   */
-  async deleteEventComment(
-    requestParameters: DeleteEventCommentRequest
-  ): Promise<Success> {
-    const response = await this.deleteEventCommentRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Deletes the team that matches the provided event_id and team_id
-   */
-  async deleteEventTeamRaw(
-    requestParameters: DeleteEventTeamRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling deleteEventTeam."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    if (
-      requestParameters.teamId === null ||
-      requestParameters.teamId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "teamId",
-        "Required parameter requestParameters.teamId was null or undefined when calling deleteEventTeam."
-      );
+    /**
+     * Deletes the event that matches the provided event_id
+     */
+    async deleteEvent(requestParameters: DeleteEventRequest): Promise<Success> {
+        const response = await this.deleteEventRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Deletes the comment with the specified id
+     */
+    async deleteEventCommentRaw(
+        requestParameters: DeleteEventCommentRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling deleteEventComment."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (
+            requestParameters.commentId === null ||
+            requestParameters.commentId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "commentId",
+                "Required parameter requestParameters.commentId was null or undefined when calling deleteEventComment."
+            );
+        }
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams/{team_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"team_id"}}`,
-          encodeURIComponent(String(requestParameters.teamId))
-        ),
-      method: "DELETE",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const queryParameters: runtime.HTTPQuery = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Deletes the team that matches the provided event_id and team_id
-   */
-  async deleteEventTeam(
-    requestParameters: DeleteEventTeamRequest
-  ): Promise<Success> {
-    const response = await this.deleteEventTeamRaw(requestParameters);
-    return await response.value();
-  }
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/comments/{comment_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"comment_id"}}`,
+                    encodeURIComponent(String(requestParameters.commentId))
+                ),
+            method: "DELETE",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Follows the provided user matching the username
-   */
-  async followUserRaw(
-    requestParameters: FollowUserRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.username === null ||
-      requestParameters.username === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "username",
-        "Required parameter requestParameters.username was null or undefined when calling followUser."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/me/follow/{username}`.replace(
-        `{${"username"}}`,
-        encodeURIComponent(String(requestParameters.username))
-      ),
-      method: "PUT",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Follows the provided user matching the username
-   */
-  async followUser(requestParameters: FollowUserRequest): Promise<Success> {
-    const response = await this.followUserRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Gets an event that matches the provided event_id
-   */
-  async getEventRaw(
-    requestParameters: GetEventRequest
-  ): Promise<runtime.ApiResponse<Event>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling getEvent."
-      );
+    /**
+     * Deletes the comment with the specified id
+     */
+    async deleteEventComment(
+        requestParameters: DeleteEventCommentRequest
+    ): Promise<Success> {
+        const response = await this.deleteEventCommentRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Deletes the team that matches the provided event_id and team_id
+     */
+    async deleteEventTeamRaw(
+        requestParameters: DeleteEventTeamRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling deleteEventTeam."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (
+            requestParameters.teamId === null ||
+            requestParameters.teamId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "teamId",
+                "Required parameter requestParameters.teamId was null or undefined when calling deleteEventTeam."
+            );
+        }
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const queryParameters: runtime.HTTPQuery = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      EventFromJSON(jsonValue)
-    );
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Gets an event that matches the provided event_id
-   */
-  async getEvent(requestParameters: GetEventRequest): Promise<Event> {
-    const response = await this.getEventRaw(requestParameters);
-    return await response.value();
-  }
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams/{team_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"team_id"}}`,
+                    encodeURIComponent(String(requestParameters.teamId))
+                ),
+            method: "DELETE",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Gets the event comments
-   */
-  async getEventCommentsRaw(
-    requestParameters: GetEventCommentsRequest
-  ): Promise<runtime.ApiResponse<Array<EventComment>>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling getEventComments."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/comments`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(EventCommentFromJSON)
-    );
-  }
-
-  /**
-   * Gets the event comments
-   */
-  async getEventComments(
-    requestParameters: GetEventCommentsRequest
-  ): Promise<Array<EventComment>> {
-    const response = await this.getEventCommentsRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * The members associated with the provided event
-   */
-  async getEventMembersRaw(
-    requestParameters: GetEventMembersRequest
-  ): Promise<runtime.ApiResponse<Array<User>>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling getEventMembers."
-      );
+    /**
+     * Deletes the team that matches the provided event_id and team_id
+     */
+    async deleteEventTeam(
+        requestParameters: DeleteEventTeamRequest
+    ): Promise<Success> {
+        const response = await this.deleteEventTeamRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Follows the provided user matching the username
+     */
+    async followUserRaw(
+        requestParameters: FollowUserRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.username === null ||
+            requestParameters.username === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "username",
+                "Required parameter requestParameters.username was null or undefined when calling followUser."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/members`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(UserFromJSON)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/me/follow/{username}`.replace(
+                `{${"username"}}`,
+                encodeURIComponent(String(requestParameters.username))
+            ),
+            method: "PUT",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * The members associated with the provided event
-   */
-  async getEventMembers(
-    requestParameters: GetEventMembersRequest
-  ): Promise<Array<User>> {
-    const response = await this.getEventMembersRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * A single team that is associated with an event
-   */
-  async getEventTeamRaw(
-    requestParameters: GetEventTeamRequest
-  ): Promise<runtime.ApiResponse<Team>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling getEventTeam."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
     }
 
-    if (
-      requestParameters.teamId === null ||
-      requestParameters.teamId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "teamId",
-        "Required parameter requestParameters.teamId was null or undefined when calling getEventTeam."
-      );
+    /**
+     * Follows the provided user matching the username
+     */
+    async followUser(requestParameters: FollowUserRequest): Promise<Success> {
+        const response = await this.followUserRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Gets an event that matches the provided event_id
+     */
+    async getEventRaw(
+        requestParameters: GetEventRequest
+    ): Promise<runtime.ApiResponse<Event>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling getEvent."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams/{team_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"team_id"}}`,
-          encodeURIComponent(String(requestParameters.teamId))
-        ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TeamFromJSON(jsonValue)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * A single team that is associated with an event
-   */
-  async getEventTeam(requestParameters: GetEventTeamRequest): Promise<Team> {
-    const response = await this.getEventTeamRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Gets team members that matches the provided event_id and team_id
-   */
-  async getEventTeamMembersRaw(
-    requestParameters: GetEventTeamMembersRequest
-  ): Promise<runtime.ApiResponse<Array<User>>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling getEventTeamMembers."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            EventFromJSON(jsonValue)
+        );
     }
 
-    if (
-      requestParameters.teamId === null ||
-      requestParameters.teamId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "teamId",
-        "Required parameter requestParameters.teamId was null or undefined when calling getEventTeamMembers."
-      );
+    /**
+     * Gets an event that matches the provided event_id
+     */
+    async getEvent(requestParameters: GetEventRequest): Promise<Event> {
+        const response = await this.getEventRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Gets the event comments
+     */
+    async getEventCommentsRaw(
+        requestParameters: GetEventCommentsRequest
+    ): Promise<runtime.ApiResponse<Array<EventComment>>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling getEventComments."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams/{team_id}/members`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"team_id"}}`,
-          encodeURIComponent(String(requestParameters.teamId))
-        ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(UserFromJSON)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/comments`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Gets team members that matches the provided event_id and team_id
-   */
-  async getEventTeamMembers(
-    requestParameters: GetEventTeamMembersRequest
-  ): Promise<Array<User>> {
-    const response = await this.getEventTeamMembersRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * The teams associated with the provided event
-   */
-  async getEventTeamsRaw(
-    requestParameters: GetEventTeamsRequest
-  ): Promise<runtime.ApiResponse<Array<Team>>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling getEventTeams."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(EventCommentFromJSON)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(TeamFromJSON)
-    );
-  }
-
-  /**
-   * The teams associated with the provided event
-   */
-  async getEventTeams(
-    requestParameters: GetEventTeamsRequest
-  ): Promise<Array<Team>> {
-    const response = await this.getEventTeamsRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Gets the currently logged in user
-   */
-  async getMeRaw(): Promise<runtime.ApiResponse<User>> {
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/me`,
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      UserFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Gets the currently logged in user
-   */
-  async getMe(): Promise<User> {
-    const response = await this.getMeRaw();
-    return await response.value();
-  }
-
-  /**
-   * Gets the invites to events of the currently logged in user
-   */
-  async getMeEventInvitationsRaw(): Promise<runtime.ApiResponse<Array<Event>>> {
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/me/events/invitations`,
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(EventFromJSON)
-    );
-  }
-
-  /**
-   * Gets the invites to events of the currently logged in user
-   */
-  async getMeEventInvitations(): Promise<Array<Event>> {
-    const response = await this.getMeEventInvitationsRaw();
-    return await response.value();
-  }
-
-  /**
-   * Gets the events that the currently logged in user is a member of
-   */
-  async getMeEventsRaw(): Promise<runtime.ApiResponse<Array<Event>>> {
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/me/events`,
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(EventFromJSON)
-    );
-  }
-
-  /**
-   * Gets the events that the currently logged in user is a member of
-   */
-  async getMeEvents(): Promise<Array<Event>> {
-    const response = await this.getMeEventsRaw();
-    return await response.value();
-  }
-
-  /**
-   * Gets the followers of the currently logged in user
-   */
-  async getMeFollowersRaw(): Promise<runtime.ApiResponse<Array<User>>> {
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/me/followers`,
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(UserFromJSON)
-    );
-  }
-
-  /**
-   * Gets the followers of the currently logged in user
-   */
-  async getMeFollowers(): Promise<Array<User>> {
-    const response = await this.getMeFollowersRaw();
-    return await response.value();
-  }
-
-  /**
-   * Gets the users that the currently logged in user is following
-   */
-  async getMeFollowingRaw(): Promise<runtime.ApiResponse<Array<User>>> {
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/me/following`,
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(UserFromJSON)
-    );
-  }
-
-  /**
-   * Gets the users that the currently logged in user is following
-   */
-  async getMeFollowing(): Promise<Array<User>> {
-    const response = await this.getMeFollowingRaw();
-    return await response.value();
-  }
-
-  /**
-   * Gets a user matching the provided username
-   */
-  async getUserByUsernameRaw(
-    requestParameters: GetUserByUsernameRequest
-  ): Promise<runtime.ApiResponse<User>> {
-    if (
-      requestParameters.username === null ||
-      requestParameters.username === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "username",
-        "Required parameter requestParameters.username was null or undefined when calling getUserByUsername."
-      );
+    /**
+     * Gets the event comments
+     */
+    async getEventComments(
+        requestParameters: GetEventCommentsRequest
+    ): Promise<Array<EventComment>> {
+        const response = await this.getEventCommentsRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * The members associated with the provided event
+     */
+    async getEventMembersRaw(
+        requestParameters: GetEventMembersRequest
+    ): Promise<runtime.ApiResponse<Array<User>>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling getEventMembers."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/users/{username}`.replace(
-        `{${"username"}}`,
-        encodeURIComponent(String(requestParameters.username))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      UserFromJSON(jsonValue)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/members`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Gets a user matching the provided username
-   */
-  async getUserByUsername(
-    requestParameters: GetUserByUsernameRequest
-  ): Promise<User> {
-    const response = await this.getUserByUsernameRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Gets the events of the user matching the username
-   */
-  async getUserEventsRaw(
-    requestParameters: GetUserEventsRequest
-  ): Promise<runtime.ApiResponse<Array<Event>>> {
-    if (
-      requestParameters.username === null ||
-      requestParameters.username === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "username",
-        "Required parameter requestParameters.username was null or undefined when calling getUserEvents."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(UserFromJSON)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/users/{username}/events`.replace(
-        `{${"username"}}`,
-        encodeURIComponent(String(requestParameters.username))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(EventFromJSON)
-    );
-  }
-
-  /**
-   * Gets the events of the user matching the username
-   */
-  async getUserEvents(
-    requestParameters: GetUserEventsRequest
-  ): Promise<Array<Event>> {
-    const response = await this.getUserEventsRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Gets the followers of the specified username
-   */
-  async getUserFollowersRaw(
-    requestParameters: GetUserFollowersRequest
-  ): Promise<runtime.ApiResponse<Array<User>>> {
-    if (
-      requestParameters.username === null ||
-      requestParameters.username === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "username",
-        "Required parameter requestParameters.username was null or undefined when calling getUserFollowers."
-      );
+    /**
+     * The members associated with the provided event
+     */
+    async getEventMembers(
+        requestParameters: GetEventMembersRequest
+    ): Promise<Array<User>> {
+        const response = await this.getEventMembersRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * A single team that is associated with an event
+     */
+    async getEventTeamRaw(
+        requestParameters: GetEventTeamRequest
+    ): Promise<runtime.ApiResponse<Team>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling getEventTeam."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        if (
+            requestParameters.teamId === null ||
+            requestParameters.teamId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "teamId",
+                "Required parameter requestParameters.teamId was null or undefined when calling getEventTeam."
+            );
+        }
 
-    const response = await this.request({
-      path: `/api/v1/users/{username}/followers`.replace(
-        `{${"username"}}`,
-        encodeURIComponent(String(requestParameters.username))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const queryParameters: runtime.HTTPQuery = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(UserFromJSON)
-    );
-  }
+        const headerParameters: runtime.HTTPHeaders = {};
 
-  /**
-   * Gets the followers of the specified username
-   */
-  async getUserFollowers(
-    requestParameters: GetUserFollowersRequest
-  ): Promise<Array<User>> {
-    const response = await this.getUserFollowersRaw(requestParameters);
-    return await response.value();
-  }
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams/{team_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"team_id"}}`,
+                    encodeURIComponent(String(requestParameters.teamId))
+                ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Gets the users that the matching user is following
-   */
-  async getUserFollowingRaw(
-    requestParameters: GetUserFollowingRequest
-  ): Promise<runtime.ApiResponse<Array<User>>> {
-    if (
-      requestParameters.username === null ||
-      requestParameters.username === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "username",
-        "Required parameter requestParameters.username was null or undefined when calling getUserFollowing."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            TeamFromJSON(jsonValue)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/users/{username}/following`.replace(
-        `{${"username"}}`,
-        encodeURIComponent(String(requestParameters.username))
-      ),
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(UserFromJSON)
-    );
-  }
-
-  /**
-   * Gets the users that the matching user is following
-   */
-  async getUserFollowing(
-    requestParameters: GetUserFollowingRequest
-  ): Promise<Array<User>> {
-    const response = await this.getUserFollowingRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Invites a member to the provided event
-   */
-  async inviteEventMemberRaw(
-    requestParameters: InviteEventMemberRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling inviteEventMember."
-      );
+    /**
+     * A single team that is associated with an event
+     */
+    async getEventTeam(requestParameters: GetEventTeamRequest): Promise<Team> {
+        const response = await this.getEventTeamRaw(requestParameters);
+        return await response.value();
     }
 
-    if (
-      requestParameters.inviteMemberRequest === null ||
-      requestParameters.inviteMemberRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "inviteMemberRequest",
-        "Required parameter requestParameters.inviteMemberRequest was null or undefined when calling inviteEventMember."
-      );
+    /**
+     * Gets team members that matches the provided event_id and team_id
+     */
+    async getEventTeamMembersRaw(
+        requestParameters: GetEventTeamMembersRequest
+    ): Promise<runtime.ApiResponse<Array<User>>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling getEventTeamMembers."
+            );
+        }
+
+        if (
+            requestParameters.teamId === null ||
+            requestParameters.teamId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "teamId",
+                "Required parameter requestParameters.teamId was null or undefined when calling getEventTeamMembers."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams/{team_id}/members`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"team_id"}}`,
+                    encodeURIComponent(String(requestParameters.teamId))
+                ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(UserFromJSON)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters["Content-Type"] = "application/json";
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/invitations`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "POST",
-      headers: headerParameters,
-      query: queryParameters,
-      body: InviteMemberRequestToJSON(requestParameters.inviteMemberRequest),
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Invites a member to the provided event
-   */
-  async inviteEventMember(
-    requestParameters: InviteEventMemberRequest
-  ): Promise<Success> {
-    const response = await this.inviteEventMemberRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Logs a user in if the provided credentials are correct
-   */
-  async loginRaw(
-    requestParameters: LoginOperationRequest
-  ): Promise<runtime.ApiResponse<Token>> {
-    if (
-      requestParameters.loginRequest === null ||
-      requestParameters.loginRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "loginRequest",
-        "Required parameter requestParameters.loginRequest was null or undefined when calling login."
-      );
+    /**
+     * Gets team members that matches the provided event_id and team_id
+     */
+    async getEventTeamMembers(
+        requestParameters: GetEventTeamMembersRequest
+    ): Promise<Array<User>> {
+        const response = await this.getEventTeamMembersRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * The teams associated with the provided event
+     */
+    async getEventTeamsRaw(
+        requestParameters: GetEventTeamsRequest
+    ): Promise<runtime.ApiResponse<Array<Team>>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling getEventTeams."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    headerParameters["Content-Type"] = "application/json";
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    const response = await this.request({
-      path: `/api/v1/login`,
-      method: "POST",
-      headers: headerParameters,
-      query: queryParameters,
-      body: LoginRequestToJSON(requestParameters.loginRequest),
-    });
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TokenFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Logs a user in if the provided credentials are correct
-   */
-  async login(requestParameters: LoginOperationRequest): Promise<Token> {
-    const response = await this.loginRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Removes a member from the provided event
-   */
-  async removeEventMemberRaw(
-    requestParameters: RemoveEventMemberRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling removeEventMember."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(TeamFromJSON)
+        );
     }
 
-    if (
-      requestParameters.userId === null ||
-      requestParameters.userId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "userId",
-        "Required parameter requestParameters.userId was null or undefined when calling removeEventMember."
-      );
+    /**
+     * The teams associated with the provided event
+     */
+    async getEventTeams(
+        requestParameters: GetEventTeamsRequest
+    ): Promise<Array<Team>> {
+        const response = await this.getEventTeamsRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Gets the currently logged in user
+     */
+    async getMeRaw(): Promise<runtime.ApiResponse<User>> {
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/members/{user_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"user_id"}}`,
-          encodeURIComponent(String(requestParameters.userId))
-        ),
-      method: "DELETE",
-      headers: headerParameters,
-      query: queryParameters,
-    });
+        const response = await this.request({
+            path: `/api/v1/me`,
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Removes a member from the provided event
-   */
-  async removeEventMember(
-    requestParameters: RemoveEventMemberRequest
-  ): Promise<Success> {
-    const response = await this.removeEventMemberRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Deletes the team member matching the provided user_id
-   */
-  async removeEventTeamMemberRaw(
-    requestParameters: RemoveEventTeamMemberRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling removeEventTeamMember."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            UserFromJSON(jsonValue)
+        );
     }
 
-    if (
-      requestParameters.teamId === null ||
-      requestParameters.teamId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "teamId",
-        "Required parameter requestParameters.teamId was null or undefined when calling removeEventTeamMember."
-      );
+    /**
+     * Gets the currently logged in user
+     */
+    async getMe(): Promise<User> {
+        const response = await this.getMeRaw();
+        return await response.value();
     }
 
-    if (
-      requestParameters.userId === null ||
-      requestParameters.userId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "userId",
-        "Required parameter requestParameters.userId was null or undefined when calling removeEventTeamMember."
-      );
+    /**
+     * Gets the invites to events of the currently logged in user
+     */
+    async getMeEventInvitationsRaw(): Promise<
+        runtime.ApiResponse<Array<Event>>
+    > {
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/me/events/invitations`,
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(EventFromJSON)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams/{team_id}/members/{user_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"team_id"}}`,
-          encodeURIComponent(String(requestParameters.teamId))
-        )
-        .replace(
-          `{${"user_id"}}`,
-          encodeURIComponent(String(requestParameters.userId))
-        ),
-      method: "DELETE",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Deletes the team member matching the provided user_id
-   */
-  async removeEventTeamMember(
-    requestParameters: RemoveEventTeamMemberRequest
-  ): Promise<Success> {
-    const response = await this.removeEventTeamMemberRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Searches users that match the provided username
-   */
-  async searchUsersRaw(
-    requestParameters: SearchUsersRequest
-  ): Promise<runtime.ApiResponse<Array<User>>> {
-    if (requestParameters.q === null || requestParameters.q === undefined) {
-      throw new runtime.RequiredError(
-        "q",
-        "Required parameter requestParameters.q was null or undefined when calling searchUsers."
-      );
+    /**
+     * Gets the invites to events of the currently logged in user
+     */
+    async getMeEventInvitations(): Promise<Array<Event>> {
+        const response = await this.getMeEventInvitationsRaw();
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Gets the events that the currently logged in user is a member of
+     */
+    async getMeEventsRaw(): Promise<runtime.ApiResponse<Array<Event>>> {
+        const queryParameters: runtime.HTTPQuery = {};
 
-    if (requestParameters.q !== undefined) {
-      queryParameters["q"] = requestParameters.q;
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/me/events`,
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(EventFromJSON)
+        );
     }
 
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/search/users`,
-      method: "GET",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(UserFromJSON)
-    );
-  }
-
-  /**
-   * Searches users that match the provided username
-   */
-  async searchUsers(
-    requestParameters: SearchUsersRequest
-  ): Promise<Array<User>> {
-    const response = await this.searchUsersRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Signs a user in if the provided credentials are correct
-   */
-  async signupRaw(
-    requestParameters: SignupOperationRequest
-  ): Promise<runtime.ApiResponse<Token>> {
-    if (
-      requestParameters.signupRequest === null ||
-      requestParameters.signupRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "signupRequest",
-        "Required parameter requestParameters.signupRequest was null or undefined when calling signup."
-      );
+    /**
+     * Gets the events that the currently logged in user is a member of
+     */
+    async getMeEvents(): Promise<Array<Event>> {
+        const response = await this.getMeEventsRaw();
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Gets the followers of the currently logged in user
+     */
+    async getMeFollowersRaw(): Promise<runtime.ApiResponse<Array<User>>> {
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    headerParameters["Content-Type"] = "application/json";
+        const response = await this.request({
+            path: `/api/v1/me/followers`,
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-    const response = await this.request({
-      path: `/api/v1/signup`,
-      method: "POST",
-      headers: headerParameters,
-      query: queryParameters,
-      body: SignupRequestToJSON(requestParameters.signupRequest),
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      TokenFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Signs a user in if the provided credentials are correct
-   */
-  async signup(requestParameters: SignupOperationRequest): Promise<Token> {
-    const response = await this.signupRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Unfollows the provided user matching the username
-   */
-  async unfollowUserRaw(
-    requestParameters: UnfollowUserRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.username === null ||
-      requestParameters.username === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "username",
-        "Required parameter requestParameters.username was null or undefined when calling unfollowUser."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(UserFromJSON)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    const response = await this.request({
-      path: `/api/v1/me/following/{username}`.replace(
-        `{${"username"}}`,
-        encodeURIComponent(String(requestParameters.username))
-      ),
-      method: "DELETE",
-      headers: headerParameters,
-      query: queryParameters,
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Unfollows the provided user matching the username
-   */
-  async unfollowUser(requestParameters: UnfollowUserRequest): Promise<Success> {
-    const response = await this.unfollowUserRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Updates the event that matches the provided event_id
-   */
-  async updateEventRaw(
-    requestParameters: UpdateEventOperationRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling updateEvent."
-      );
+    /**
+     * Gets the followers of the currently logged in user
+     */
+    async getMeFollowers(): Promise<Array<User>> {
+        const response = await this.getMeFollowersRaw();
+        return await response.value();
     }
 
-    if (
-      requestParameters.updateEventRequest === null ||
-      requestParameters.updateEventRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "updateEventRequest",
-        "Required parameter requestParameters.updateEventRequest was null or undefined when calling updateEvent."
-      );
+    /**
+     * Gets the users that the currently logged in user is following
+     */
+    async getMeFollowingRaw(): Promise<runtime.ApiResponse<Array<User>>> {
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/me/following`,
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(UserFromJSON)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    headerParameters["Content-Type"] = "application/json";
-
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}`.replace(
-        `{${"event_id"}}`,
-        encodeURIComponent(String(requestParameters.eventId))
-      ),
-      method: "PATCH",
-      headers: headerParameters,
-      query: queryParameters,
-      body: UpdateEventRequestToJSON(requestParameters.updateEventRequest),
-    });
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Updates the event that matches the provided event_id
-   */
-  async updateEvent(
-    requestParameters: UpdateEventOperationRequest
-  ): Promise<Success> {
-    const response = await this.updateEventRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Update a member that matches the provided user_id and event_id
-   */
-  async updateEventMemberRaw(
-    requestParameters: UpdateEventMemberRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling updateEventMember."
-      );
+    /**
+     * Gets the users that the currently logged in user is following
+     */
+    async getMeFollowing(): Promise<Array<User>> {
+        const response = await this.getMeFollowingRaw();
+        return await response.value();
     }
 
-    if (
-      requestParameters.userId === null ||
-      requestParameters.userId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "userId",
-        "Required parameter requestParameters.userId was null or undefined when calling updateEventMember."
-      );
+    /**
+     * Gets a user matching the provided username
+     */
+    async getUserByUsernameRaw(
+        requestParameters: GetUserByUsernameRequest
+    ): Promise<runtime.ApiResponse<User>> {
+        if (
+            requestParameters.username === null ||
+            requestParameters.username === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "username",
+                "Required parameter requestParameters.username was null or undefined when calling getUserByUsername."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/users/{username}`.replace(
+                `{${"username"}}`,
+                encodeURIComponent(String(requestParameters.username))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            UserFromJSON(jsonValue)
+        );
     }
 
-    if (
-      requestParameters.updateMemberRequest === null ||
-      requestParameters.updateMemberRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "updateMemberRequest",
-        "Required parameter requestParameters.updateMemberRequest was null or undefined when calling updateEventMember."
-      );
+    /**
+     * Gets a user matching the provided username
+     */
+    async getUserByUsername(
+        requestParameters: GetUserByUsernameRequest
+    ): Promise<User> {
+        const response = await this.getUserByUsernameRaw(requestParameters);
+        return await response.value();
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Gets the events of the user matching the username
+     */
+    async getUserEventsRaw(
+        requestParameters: GetUserEventsRequest
+    ): Promise<runtime.ApiResponse<Array<Event>>> {
+        if (
+            requestParameters.username === null ||
+            requestParameters.username === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "username",
+                "Required parameter requestParameters.username was null or undefined when calling getUserEvents."
+            );
+        }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+        const queryParameters: runtime.HTTPQuery = {};
 
-    headerParameters["Content-Type"] = "application/json";
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/members/{user_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"user_id"}}`,
-          encodeURIComponent(String(requestParameters.userId))
-        ),
-      method: "PATCH",
-      headers: headerParameters,
-      query: queryParameters,
-      body: UpdateMemberRequestToJSON(requestParameters.updateMemberRequest),
-    });
+        const response = await this.request({
+            path: `/api/v1/users/{username}/events`.replace(
+                `{${"username"}}`,
+                encodeURIComponent(String(requestParameters.username))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
-
-  /**
-   * Update a member that matches the provided user_id and event_id
-   */
-  async updateEventMember(
-    requestParameters: UpdateEventMemberRequest
-  ): Promise<Success> {
-    const response = await this.updateEventMemberRaw(requestParameters);
-    return await response.value();
-  }
-
-  /**
-   * Updates the team that matches the provided event_id and team_id
-   */
-  async updateEventTeamRaw(
-    requestParameters: UpdateEventTeamRequest
-  ): Promise<runtime.ApiResponse<Success>> {
-    if (
-      requestParameters.eventId === null ||
-      requestParameters.eventId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "eventId",
-        "Required parameter requestParameters.eventId was null or undefined when calling updateEventTeam."
-      );
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(EventFromJSON)
+        );
     }
 
-    if (
-      requestParameters.teamId === null ||
-      requestParameters.teamId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "teamId",
-        "Required parameter requestParameters.teamId was null or undefined when calling updateEventTeam."
-      );
+    /**
+     * Gets the events of the user matching the username
+     */
+    async getUserEvents(
+        requestParameters: GetUserEventsRequest
+    ): Promise<Array<Event>> {
+        const response = await this.getUserEventsRaw(requestParameters);
+        return await response.value();
     }
 
-    if (
-      requestParameters.updateTeamRequest === null ||
-      requestParameters.updateTeamRequest === undefined
-    ) {
-      throw new runtime.RequiredError(
-        "updateTeamRequest",
-        "Required parameter requestParameters.updateTeamRequest was null or undefined when calling updateEventTeam."
-      );
+    /**
+     * Gets the followers of the specified username
+     */
+    async getUserFollowersRaw(
+        requestParameters: GetUserFollowersRequest
+    ): Promise<runtime.ApiResponse<Array<User>>> {
+        if (
+            requestParameters.username === null ||
+            requestParameters.username === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "username",
+                "Required parameter requestParameters.username was null or undefined when calling getUserFollowers."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/users/{username}/followers`.replace(
+                `{${"username"}}`,
+                encodeURIComponent(String(requestParameters.username))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(UserFromJSON)
+        );
     }
 
-    const queryParameters: runtime.HTTPQuery = {};
+    /**
+     * Gets the followers of the specified username
+     */
+    async getUserFollowers(
+        requestParameters: GetUserFollowersRequest
+    ): Promise<Array<User>> {
+        const response = await this.getUserFollowersRaw(requestParameters);
+        return await response.value();
+    }
 
-    const headerParameters: runtime.HTTPHeaders = {};
+    /**
+     * Gets the users that the matching user is following
+     */
+    async getUserFollowingRaw(
+        requestParameters: GetUserFollowingRequest
+    ): Promise<runtime.ApiResponse<Array<User>>> {
+        if (
+            requestParameters.username === null ||
+            requestParameters.username === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "username",
+                "Required parameter requestParameters.username was null or undefined when calling getUserFollowing."
+            );
+        }
 
-    headerParameters["Content-Type"] = "application/json";
+        const queryParameters: runtime.HTTPQuery = {};
 
-    const response = await this.request({
-      path: `/api/v1/events/{event_id}/teams/{team_id}`
-        .replace(
-          `{${"event_id"}}`,
-          encodeURIComponent(String(requestParameters.eventId))
-        )
-        .replace(
-          `{${"team_id"}}`,
-          encodeURIComponent(String(requestParameters.teamId))
-        ),
-      method: "PATCH",
-      headers: headerParameters,
-      query: queryParameters,
-      body: UpdateTeamRequestToJSON(requestParameters.updateTeamRequest),
-    });
+        const headerParameters: runtime.HTTPHeaders = {};
 
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SuccessFromJSON(jsonValue)
-    );
-  }
+        const response = await this.request({
+            path: `/api/v1/users/{username}/following`.replace(
+                `{${"username"}}`,
+                encodeURIComponent(String(requestParameters.username))
+            ),
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
 
-  /**
-   * Updates the team that matches the provided event_id and team_id
-   */
-  async updateEventTeam(
-    requestParameters: UpdateEventTeamRequest
-  ): Promise<Success> {
-    const response = await this.updateEventTeamRaw(requestParameters);
-    return await response.value();
-  }
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(UserFromJSON)
+        );
+    }
+
+    /**
+     * Gets the users that the matching user is following
+     */
+    async getUserFollowing(
+        requestParameters: GetUserFollowingRequest
+    ): Promise<Array<User>> {
+        const response = await this.getUserFollowingRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Invites a member to the provided event
+     */
+    async inviteEventMemberRaw(
+        requestParameters: InviteEventMemberRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling inviteEventMember."
+            );
+        }
+
+        if (
+            requestParameters.inviteMemberRequest === null ||
+            requestParameters.inviteMemberRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "inviteMemberRequest",
+                "Required parameter requestParameters.inviteMemberRequest was null or undefined when calling inviteEventMember."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/invitations`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "POST",
+            headers: headerParameters,
+            query: queryParameters,
+            body: InviteMemberRequestToJSON(
+                requestParameters.inviteMemberRequest
+            ),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Invites a member to the provided event
+     */
+    async inviteEventMember(
+        requestParameters: InviteEventMemberRequest
+    ): Promise<Success> {
+        const response = await this.inviteEventMemberRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Logs a user in if the provided credentials are correct
+     */
+    async loginRaw(
+        requestParameters: LoginOperationRequest
+    ): Promise<runtime.ApiResponse<Token>> {
+        if (
+            requestParameters.loginRequest === null ||
+            requestParameters.loginRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "loginRequest",
+                "Required parameter requestParameters.loginRequest was null or undefined when calling login."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/login`,
+            method: "POST",
+            headers: headerParameters,
+            query: queryParameters,
+            body: LoginRequestToJSON(requestParameters.loginRequest),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            TokenFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Logs a user in if the provided credentials are correct
+     */
+    async login(requestParameters: LoginOperationRequest): Promise<Token> {
+        const response = await this.loginRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Removes a member from the provided event
+     */
+    async removeEventMemberRaw(
+        requestParameters: RemoveEventMemberRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling removeEventMember."
+            );
+        }
+
+        if (
+            requestParameters.userId === null ||
+            requestParameters.userId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "userId",
+                "Required parameter requestParameters.userId was null or undefined when calling removeEventMember."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/members/{user_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"user_id"}}`,
+                    encodeURIComponent(String(requestParameters.userId))
+                ),
+            method: "DELETE",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Removes a member from the provided event
+     */
+    async removeEventMember(
+        requestParameters: RemoveEventMemberRequest
+    ): Promise<Success> {
+        const response = await this.removeEventMemberRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Deletes the team member matching the provided user_id
+     */
+    async removeEventTeamMemberRaw(
+        requestParameters: RemoveEventTeamMemberRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling removeEventTeamMember."
+            );
+        }
+
+        if (
+            requestParameters.teamId === null ||
+            requestParameters.teamId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "teamId",
+                "Required parameter requestParameters.teamId was null or undefined when calling removeEventTeamMember."
+            );
+        }
+
+        if (
+            requestParameters.userId === null ||
+            requestParameters.userId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "userId",
+                "Required parameter requestParameters.userId was null or undefined when calling removeEventTeamMember."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams/{team_id}/members/{user_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"team_id"}}`,
+                    encodeURIComponent(String(requestParameters.teamId))
+                )
+                .replace(
+                    `{${"user_id"}}`,
+                    encodeURIComponent(String(requestParameters.userId))
+                ),
+            method: "DELETE",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Deletes the team member matching the provided user_id
+     */
+    async removeEventTeamMember(
+        requestParameters: RemoveEventTeamMemberRequest
+    ): Promise<Success> {
+        const response = await this.removeEventTeamMemberRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Searches users that match the provided username
+     */
+    async searchUsersRaw(
+        requestParameters: SearchUsersRequest
+    ): Promise<runtime.ApiResponse<Array<User>>> {
+        if (requestParameters.q === null || requestParameters.q === undefined) {
+            throw new runtime.RequiredError(
+                "q",
+                "Required parameter requestParameters.q was null or undefined when calling searchUsers."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        if (requestParameters.q !== undefined) {
+            queryParameters["q"] = requestParameters.q;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/search/users`,
+            method: "GET",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            jsonValue.map(UserFromJSON)
+        );
+    }
+
+    /**
+     * Searches users that match the provided username
+     */
+    async searchUsers(
+        requestParameters: SearchUsersRequest
+    ): Promise<Array<User>> {
+        const response = await this.searchUsersRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Signs a user in if the provided credentials are correct
+     */
+    async signupRaw(
+        requestParameters: SignupOperationRequest
+    ): Promise<runtime.ApiResponse<Token>> {
+        if (
+            requestParameters.signupRequest === null ||
+            requestParameters.signupRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "signupRequest",
+                "Required parameter requestParameters.signupRequest was null or undefined when calling signup."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/signup`,
+            method: "POST",
+            headers: headerParameters,
+            query: queryParameters,
+            body: SignupRequestToJSON(requestParameters.signupRequest),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            TokenFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Signs a user in if the provided credentials are correct
+     */
+    async signup(requestParameters: SignupOperationRequest): Promise<Token> {
+        const response = await this.signupRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Unfollows the provided user matching the username
+     */
+    async unfollowUserRaw(
+        requestParameters: UnfollowUserRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.username === null ||
+            requestParameters.username === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "username",
+                "Required parameter requestParameters.username was null or undefined when calling unfollowUser."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/me/following/{username}`.replace(
+                `{${"username"}}`,
+                encodeURIComponent(String(requestParameters.username))
+            ),
+            method: "DELETE",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Unfollows the provided user matching the username
+     */
+    async unfollowUser(
+        requestParameters: UnfollowUserRequest
+    ): Promise<Success> {
+        const response = await this.unfollowUserRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Updates the event that matches the provided event_id
+     */
+    async updateEventRaw(
+        requestParameters: UpdateEventOperationRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling updateEvent."
+            );
+        }
+
+        if (
+            requestParameters.updateEventRequest === null ||
+            requestParameters.updateEventRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "updateEventRequest",
+                "Required parameter requestParameters.updateEventRequest was null or undefined when calling updateEvent."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}`.replace(
+                `{${"event_id"}}`,
+                encodeURIComponent(String(requestParameters.eventId))
+            ),
+            method: "PATCH",
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateEventRequestToJSON(
+                requestParameters.updateEventRequest
+            ),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Updates the event that matches the provided event_id
+     */
+    async updateEvent(
+        requestParameters: UpdateEventOperationRequest
+    ): Promise<Success> {
+        const response = await this.updateEventRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Update a member that matches the provided user_id and event_id
+     */
+    async updateEventMemberRaw(
+        requestParameters: UpdateEventMemberRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling updateEventMember."
+            );
+        }
+
+        if (
+            requestParameters.userId === null ||
+            requestParameters.userId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "userId",
+                "Required parameter requestParameters.userId was null or undefined when calling updateEventMember."
+            );
+        }
+
+        if (
+            requestParameters.updateMemberRequest === null ||
+            requestParameters.updateMemberRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "updateMemberRequest",
+                "Required parameter requestParameters.updateMemberRequest was null or undefined when calling updateEventMember."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/members/{user_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"user_id"}}`,
+                    encodeURIComponent(String(requestParameters.userId))
+                ),
+            method: "PATCH",
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateMemberRequestToJSON(
+                requestParameters.updateMemberRequest
+            ),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Update a member that matches the provided user_id and event_id
+     */
+    async updateEventMember(
+        requestParameters: UpdateEventMemberRequest
+    ): Promise<Success> {
+        const response = await this.updateEventMemberRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Updates the team that matches the provided event_id and team_id
+     */
+    async updateEventTeamRaw(
+        requestParameters: UpdateEventTeamRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling updateEventTeam."
+            );
+        }
+
+        if (
+            requestParameters.teamId === null ||
+            requestParameters.teamId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "teamId",
+                "Required parameter requestParameters.teamId was null or undefined when calling updateEventTeam."
+            );
+        }
+
+        if (
+            requestParameters.updateTeamRequest === null ||
+            requestParameters.updateTeamRequest === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "updateTeamRequest",
+                "Required parameter requestParameters.updateTeamRequest was null or undefined when calling updateEventTeam."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters["Content-Type"] = "application/json";
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams/{team_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"team_id"}}`,
+                    encodeURIComponent(String(requestParameters.teamId))
+                ),
+            method: "PATCH",
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateTeamRequestToJSON(requestParameters.updateTeamRequest),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Updates the team that matches the provided event_id and team_id
+     */
+    async updateEventTeam(
+        requestParameters: UpdateEventTeamRequest
+    ): Promise<Success> {
+        const response = await this.updateEventTeamRaw(requestParameters);
+        return await response.value();
+    }
 }

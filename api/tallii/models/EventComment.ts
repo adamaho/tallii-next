@@ -21,70 +21,70 @@ import { User, UserFromJSON, UserFromJSONTyped, UserToJSON } from "./";
  * @interface EventComment
  */
 export interface EventComment {
-  /**
-   *
-   * @type {number}
-   * @memberof EventComment
-   */
-  commentId: number;
-  /**
-   *
-   * @type {number}
-   * @memberof EventComment
-   */
-  eventId: number;
-  /**
-   *
-   * @type {User}
-   * @memberof EventComment
-   */
-  user: User;
-  /**
-   *
-   * @type {string}
-   * @memberof EventComment
-   */
-  comment: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EventComment
-   */
-  createdAt: string;
+    /**
+     *
+     * @type {number}
+     * @memberof EventComment
+     */
+    commentId: number;
+    /**
+     *
+     * @type {number}
+     * @memberof EventComment
+     */
+    eventId: number;
+    /**
+     *
+     * @type {User}
+     * @memberof EventComment
+     */
+    user: User;
+    /**
+     *
+     * @type {string}
+     * @memberof EventComment
+     */
+    comment: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EventComment
+     */
+    createdAt: string;
 }
 
 export function EventCommentFromJSON(json: any): EventComment {
-  return EventCommentFromJSONTyped(json, false);
+    return EventCommentFromJSONTyped(json, false);
 }
 
 export function EventCommentFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): EventComment {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    commentId: json["comment_id"],
-    eventId: json["event_id"],
-    user: UserFromJSON(json["user"]),
-    comment: json["comment"],
-    createdAt: json["created_at"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        commentId: json["comment_id"],
+        eventId: json["event_id"],
+        user: UserFromJSON(json["user"]),
+        comment: json["comment"],
+        createdAt: json["created_at"],
+    };
 }
 
 export function EventCommentToJSON(value?: EventComment | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    comment_id: value.commentId,
-    event_id: value.eventId,
-    user: UserToJSON(value.user),
-    comment: value.comment,
-    created_at: value.createdAt,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        comment_id: value.commentId,
+        event_id: value.eventId,
+        user: UserToJSON(value.user),
+        comment: value.comment,
+        created_at: value.createdAt,
+    };
 }

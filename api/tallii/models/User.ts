@@ -19,70 +19,70 @@ import { exists, mapValues } from "../runtime";
  * @interface User
  */
 export interface User {
-  /**
-   *
-   * @type {number}
-   * @memberof User
-   */
-  userId: number;
-  /**
-   *
-   * @type {string}
-   * @memberof User
-   */
-  emoji: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof User
-   */
-  bgColor: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof User
-   */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof User
-   */
-  bio: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof User
+     */
+    userId: number;
+    /**
+     *
+     * @type {string}
+     * @memberof User
+     */
+    emoji: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof User
+     */
+    bgColor: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof User
+     */
+    username: string;
+    /**
+     *
+     * @type {string}
+     * @memberof User
+     */
+    bio: string | null;
 }
 
 export function UserFromJSON(json: any): User {
-  return UserFromJSONTyped(json, false);
+    return UserFromJSONTyped(json, false);
 }
 
 export function UserFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): User {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json["user_id"],
-    emoji: json["emoji"],
-    bgColor: json["bg_color"],
-    username: json["username"],
-    bio: json["bio"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        userId: json["user_id"],
+        emoji: json["emoji"],
+        bgColor: json["bg_color"],
+        username: json["username"],
+        bio: json["bio"],
+    };
 }
 
 export function UserToJSON(value?: User | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    user_id: value.userId,
-    emoji: value.emoji,
-    bg_color: value.bgColor,
-    username: value.username,
-    bio: value.bio,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        user_id: value.userId,
+        emoji: value.emoji,
+        bg_color: value.bgColor,
+        username: value.username,
+        bio: value.bio,
+    };
 }

@@ -19,42 +19,42 @@ import { exists, mapValues } from "../runtime";
  * @interface CreateEventCommentRequest
  */
 export interface CreateEventCommentRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof CreateEventCommentRequest
-   */
-  comment: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateEventCommentRequest
+     */
+    comment: string;
 }
 
 export function CreateEventCommentRequestFromJSON(
-  json: any
+    json: any
 ): CreateEventCommentRequest {
-  return CreateEventCommentRequestFromJSONTyped(json, false);
+    return CreateEventCommentRequestFromJSONTyped(json, false);
 }
 
 export function CreateEventCommentRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): CreateEventCommentRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    comment: json["comment"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        comment: json["comment"],
+    };
 }
 
 export function CreateEventCommentRequestToJSON(
-  value?: CreateEventCommentRequest | null
+    value?: CreateEventCommentRequest | null
 ): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    comment: value.comment,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        comment: value.comment,
+    };
 }

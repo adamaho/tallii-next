@@ -19,46 +19,46 @@ import { exists, mapValues } from "../runtime";
  * @interface CreateTeamRequest
  */
 export interface CreateTeamRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof CreateTeamRequest
-   */
-  name: string;
-  /**
-   *
-   * @type {Array<number>}
-   * @memberof CreateTeamRequest
-   */
-  members: Array<number>;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateTeamRequest
+     */
+    name: string;
+    /**
+     *
+     * @type {Array<number>}
+     * @memberof CreateTeamRequest
+     */
+    members: Array<number>;
 }
 
 export function CreateTeamRequestFromJSON(json: any): CreateTeamRequest {
-  return CreateTeamRequestFromJSONTyped(json, false);
+    return CreateTeamRequestFromJSONTyped(json, false);
 }
 
 export function CreateTeamRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): CreateTeamRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json["name"],
-    members: json["members"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        name: json["name"],
+        members: json["members"],
+    };
 }
 
 export function CreateTeamRequestToJSON(value?: CreateTeamRequest | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    members: value.members,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        name: value.name,
+        members: value.members,
+    };
 }

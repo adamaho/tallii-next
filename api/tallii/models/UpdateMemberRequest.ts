@@ -19,50 +19,50 @@ import { exists, mapValues } from "../runtime";
  * @interface UpdateMemberRequest
  */
 export interface UpdateMemberRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateMemberRequest
-   */
-  state: UpdateMemberRequestStateEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateMemberRequest
-   */
-  role: UpdateMemberRequestRoleEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateMemberRequest
+     */
+    state: UpdateMemberRequestStateEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateMemberRequest
+     */
+    role: UpdateMemberRequestRoleEnum;
 }
 
 export function UpdateMemberRequestFromJSON(json: any): UpdateMemberRequest {
-  return UpdateMemberRequestFromJSONTyped(json, false);
+    return UpdateMemberRequestFromJSONTyped(json, false);
 }
 
 export function UpdateMemberRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): UpdateMemberRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    state: json["state"],
-    role: json["role"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        state: json["state"],
+        role: json["role"],
+    };
 }
 
 export function UpdateMemberRequestToJSON(
-  value?: UpdateMemberRequest | null
+    value?: UpdateMemberRequest | null
 ): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    state: value.state,
-    role: value.role,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        state: value.state,
+        role: value.role,
+    };
 }
 
 /**
@@ -70,15 +70,15 @@ export function UpdateMemberRequestToJSON(
  * @enum {string}
  */
 export enum UpdateMemberRequestStateEnum {
-  Pending = "pending",
-  Declined = "declined",
-  Active = "active",
+    Pending = "pending",
+    Declined = "declined",
+    Active = "active",
 }
 /**
  * @export
  * @enum {string}
  */
 export enum UpdateMemberRequestRoleEnum {
-  Member = "member",
-  Admin = "admin",
+    Member = "member",
+    Admin = "admin",
 }

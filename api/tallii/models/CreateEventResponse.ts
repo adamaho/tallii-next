@@ -19,40 +19,40 @@ import { exists, mapValues } from "../runtime";
  * @interface CreateEventResponse
  */
 export interface CreateEventResponse {
-  /**
-   *
-   * @type {number}
-   * @memberof CreateEventResponse
-   */
-  eventId: number;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateEventResponse
+     */
+    eventId: number;
 }
 
 export function CreateEventResponseFromJSON(json: any): CreateEventResponse {
-  return CreateEventResponseFromJSONTyped(json, false);
+    return CreateEventResponseFromJSONTyped(json, false);
 }
 
 export function CreateEventResponseFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): CreateEventResponse {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    eventId: json["event_id"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        eventId: json["event_id"],
+    };
 }
 
 export function CreateEventResponseToJSON(
-  value?: CreateEventResponse | null
+    value?: CreateEventResponse | null
 ): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    event_id: value.eventId,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        event_id: value.eventId,
+    };
 }

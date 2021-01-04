@@ -9,22 +9,22 @@ import "../styles/global.css";
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <Head>
-          <title>Tallii</title>
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+    return (
+        <QueryClientProvider client={queryClient}>
+            <Hydrate state={pageProps.dehydratedState}>
+                <Head>
+                    <title>Tallii</title>
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+                        rel="stylesheet"
+                    />
+                </Head>
 
-        <Component {...pageProps} />
-      </Hydrate>
-    </QueryClientProvider>
-  );
+                <Component {...pageProps} />
+            </Hydrate>
+        </QueryClientProvider>
+    );
 }
 
 export default MyApp;

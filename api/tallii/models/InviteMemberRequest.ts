@@ -19,40 +19,40 @@ import { exists, mapValues } from "../runtime";
  * @interface InviteMemberRequest
  */
 export interface InviteMemberRequest {
-  /**
-   *
-   * @type {number}
-   * @memberof InviteMemberRequest
-   */
-  userId: number;
+    /**
+     *
+     * @type {number}
+     * @memberof InviteMemberRequest
+     */
+    userId: number;
 }
 
 export function InviteMemberRequestFromJSON(json: any): InviteMemberRequest {
-  return InviteMemberRequestFromJSONTyped(json, false);
+    return InviteMemberRequestFromJSONTyped(json, false);
 }
 
 export function InviteMemberRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): InviteMemberRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json["user_id"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        userId: json["user_id"],
+    };
 }
 
 export function InviteMemberRequestToJSON(
-  value?: InviteMemberRequest | null
+    value?: InviteMemberRequest | null
 ): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    user_id: value.userId,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        user_id: value.userId,
+    };
 }

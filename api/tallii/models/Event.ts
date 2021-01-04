@@ -21,72 +21,72 @@ import { User, UserFromJSON, UserFromJSONTyped, UserToJSON } from "./";
  * @interface Event
  */
 export interface Event {
-  /**
-   *
-   * @type {number}
-   * @memberof Event
-   */
-  eventId: number;
-  /**
-   *
-   * @type {string}
-   * @memberof Event
-   */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Event
-   */
-  description: string | null;
-  /**
-   *
-   * @type {User}
-   * @memberof Event
-   */
-  creator?: User;
-  /**
-   *
-   * @type {string}
-   * @memberof Event
-   */
-  createdAt: string;
+    /**
+     *
+     * @type {number}
+     * @memberof Event
+     */
+    eventId: number;
+    /**
+     *
+     * @type {string}
+     * @memberof Event
+     */
+    name: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Event
+     */
+    description: string | null;
+    /**
+     *
+     * @type {User}
+     * @memberof Event
+     */
+    creator?: User;
+    /**
+     *
+     * @type {string}
+     * @memberof Event
+     */
+    createdAt: string;
 }
 
 export function EventFromJSON(json: any): Event {
-  return EventFromJSONTyped(json, false);
+    return EventFromJSONTyped(json, false);
 }
 
 export function EventFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): Event {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    eventId: json["event_id"],
-    name: json["name"],
-    description: json["description"],
-    creator: !exists(json, "creator")
-      ? undefined
-      : UserFromJSON(json["creator"]),
-    createdAt: json["created_at"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        eventId: json["event_id"],
+        name: json["name"],
+        description: json["description"],
+        creator: !exists(json, "creator")
+            ? undefined
+            : UserFromJSON(json["creator"]),
+        createdAt: json["created_at"],
+    };
 }
 
 export function EventToJSON(value?: Event | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    event_id: value.eventId,
-    name: value.name,
-    description: value.description,
-    creator: UserToJSON(value.creator),
-    created_at: value.createdAt,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        event_id: value.eventId,
+        name: value.name,
+        description: value.description,
+        creator: UserToJSON(value.creator),
+        created_at: value.createdAt,
+    };
 }

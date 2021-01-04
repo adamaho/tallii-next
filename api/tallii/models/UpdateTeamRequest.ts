@@ -19,54 +19,54 @@ import { exists, mapValues } from "../runtime";
  * @interface UpdateTeamRequest
  */
 export interface UpdateTeamRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateTeamRequest
-   */
-  name: string;
-  /**
-   *
-   * @type {number}
-   * @memberof UpdateTeamRequest
-   */
-  score: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof UpdateTeamRequest
-   */
-  winner: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateTeamRequest
+     */
+    name: string;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateTeamRequest
+     */
+    score: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UpdateTeamRequest
+     */
+    winner: boolean;
 }
 
 export function UpdateTeamRequestFromJSON(json: any): UpdateTeamRequest {
-  return UpdateTeamRequestFromJSONTyped(json, false);
+    return UpdateTeamRequestFromJSONTyped(json, false);
 }
 
 export function UpdateTeamRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): UpdateTeamRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json["name"],
-    score: json["score"],
-    winner: json["winner"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        name: json["name"],
+        score: json["score"],
+        winner: json["winner"],
+    };
 }
 
 export function UpdateTeamRequestToJSON(value?: UpdateTeamRequest | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    score: value.score,
-    winner: value.winner,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        name: value.name,
+        score: value.score,
+        winner: value.winner,
+    };
 }

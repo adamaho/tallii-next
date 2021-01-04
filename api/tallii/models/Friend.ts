@@ -19,70 +19,70 @@ import { exists, mapValues } from "../runtime";
  * @interface Friend
  */
 export interface Friend {
-  /**
-   *
-   * @type {number}
-   * @memberof Friend
-   */
-  userId: number;
-  /**
-   *
-   * @type {string}
-   * @memberof Friend
-   */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Friend
-   */
-  avatar: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof Friend
-   */
-  taunt: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof Friend
-   */
-  createdAt: string;
+    /**
+     *
+     * @type {number}
+     * @memberof Friend
+     */
+    userId: number;
+    /**
+     *
+     * @type {string}
+     * @memberof Friend
+     */
+    username: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Friend
+     */
+    avatar: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof Friend
+     */
+    taunt: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof Friend
+     */
+    createdAt: string;
 }
 
 export function FriendFromJSON(json: any): Friend {
-  return FriendFromJSONTyped(json, false);
+    return FriendFromJSONTyped(json, false);
 }
 
 export function FriendFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): Friend {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json["user_id"],
-    username: json["username"],
-    avatar: json["avatar"],
-    taunt: json["taunt"],
-    createdAt: json["created_at"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        userId: json["user_id"],
+        username: json["username"],
+        avatar: json["avatar"],
+        taunt: json["taunt"],
+        createdAt: json["created_at"],
+    };
 }
 
 export function FriendToJSON(value?: Friend | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    user_id: value.userId,
-    username: value.username,
-    avatar: value.avatar,
-    taunt: value.taunt,
-    created_at: value.createdAt,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        user_id: value.userId,
+        username: value.username,
+        avatar: value.avatar,
+        taunt: value.taunt,
+        created_at: value.createdAt,
+    };
 }

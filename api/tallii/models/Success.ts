@@ -19,46 +19,46 @@ import { exists, mapValues } from "../runtime";
  * @interface Success
  */
 export interface Success {
-  /**
-   *
-   * @type {string}
-   * @memberof Success
-   */
-  code: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Success
-   */
-  message: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Success
+     */
+    code: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Success
+     */
+    message: string;
 }
 
 export function SuccessFromJSON(json: any): Success {
-  return SuccessFromJSONTyped(json, false);
+    return SuccessFromJSONTyped(json, false);
 }
 
 export function SuccessFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): Success {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    code: json["code"],
-    message: json["message"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        code: json["code"],
+        message: json["message"],
+    };
 }
 
 export function SuccessToJSON(value?: Success | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    code: value.code,
-    message: value.message,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        code: value.code,
+        message: value.message,
+    };
 }

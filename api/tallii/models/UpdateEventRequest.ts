@@ -19,48 +19,48 @@ import { exists, mapValues } from "../runtime";
  * @interface UpdateEventRequest
  */
 export interface UpdateEventRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateEventRequest
-   */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateEventRequest
-   */
-  description: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateEventRequest
+     */
+    name: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateEventRequest
+     */
+    description: string;
 }
 
 export function UpdateEventRequestFromJSON(json: any): UpdateEventRequest {
-  return UpdateEventRequestFromJSONTyped(json, false);
+    return UpdateEventRequestFromJSONTyped(json, false);
 }
 
 export function UpdateEventRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): UpdateEventRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    name: json["name"],
-    description: json["description"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        name: json["name"],
+        description: json["description"],
+    };
 }
 
 export function UpdateEventRequestToJSON(
-  value?: UpdateEventRequest | null
+    value?: UpdateEventRequest | null
 ): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    name: value.name,
-    description: value.description,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        name: value.name,
+        description: value.description,
+    };
 }

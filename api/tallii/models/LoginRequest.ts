@@ -19,46 +19,46 @@ import { exists, mapValues } from "../runtime";
  * @interface LoginRequest
  */
 export interface LoginRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof LoginRequest
-   */
-  email: string;
-  /**
-   *
-   * @type {string}
-   * @memberof LoginRequest
-   */
-  password: string;
+    /**
+     *
+     * @type {string}
+     * @memberof LoginRequest
+     */
+    email: string;
+    /**
+     *
+     * @type {string}
+     * @memberof LoginRequest
+     */
+    password: string;
 }
 
 export function LoginRequestFromJSON(json: any): LoginRequest {
-  return LoginRequestFromJSONTyped(json, false);
+    return LoginRequestFromJSONTyped(json, false);
 }
 
 export function LoginRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): LoginRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    email: json["email"],
-    password: json["password"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        email: json["email"],
+        password: json["password"],
+    };
 }
 
 export function LoginRequestToJSON(value?: LoginRequest | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    email: value.email,
-    password: value.password,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        email: value.email,
+        password: value.password,
+    };
 }

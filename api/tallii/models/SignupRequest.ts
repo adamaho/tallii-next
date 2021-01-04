@@ -19,62 +19,62 @@ import { exists, mapValues } from "../runtime";
  * @interface SignupRequest
  */
 export interface SignupRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof SignupRequest
-   */
-  email: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SignupRequest
-   */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SignupRequest
-   */
-  inviteCode: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SignupRequest
-   */
-  password: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SignupRequest
+     */
+    email: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SignupRequest
+     */
+    username: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SignupRequest
+     */
+    inviteCode: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SignupRequest
+     */
+    password: string;
 }
 
 export function SignupRequestFromJSON(json: any): SignupRequest {
-  return SignupRequestFromJSONTyped(json, false);
+    return SignupRequestFromJSONTyped(json, false);
 }
 
 export function SignupRequestFromJSONTyped(
-  json: any,
-  ignoreDiscriminator: boolean
+    json: any,
+    ignoreDiscriminator: boolean
 ): SignupRequest {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    email: json["email"],
-    username: json["username"],
-    inviteCode: json["invite_code"],
-    password: json["password"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        email: json["email"],
+        username: json["username"],
+        inviteCode: json["invite_code"],
+        password: json["password"],
+    };
 }
 
 export function SignupRequestToJSON(value?: SignupRequest | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    email: value.email,
-    username: value.username,
-    invite_code: value.inviteCode,
-    password: value.password,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        email: value.email,
+        username: value.username,
+        invite_code: value.inviteCode,
+        password: value.password,
+    };
 }

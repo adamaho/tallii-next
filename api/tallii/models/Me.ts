@@ -19,91 +19,91 @@ import { exists, mapValues } from "../runtime";
  * @interface Me
  */
 export interface Me {
-  /**
-   *
-   * @type {number}
-   * @memberof Me
-   */
-  userId: number;
-  /**
-   *
-   * @type {string}
-   * @memberof Me
-   */
-  emoji?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof Me
-   */
-  bgColor?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof Me
-   */
-  email: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Me
-   */
-  inviteCode: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Me
-   */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Me
-   */
-  bio?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof Me
-   */
-  verified: boolean | null;
+    /**
+     *
+     * @type {number}
+     * @memberof Me
+     */
+    userId: number;
+    /**
+     *
+     * @type {string}
+     * @memberof Me
+     */
+    emoji?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof Me
+     */
+    bgColor?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof Me
+     */
+    email: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Me
+     */
+    inviteCode: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Me
+     */
+    username: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Me
+     */
+    bio?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof Me
+     */
+    verified: boolean | null;
 }
 
 export function MeFromJSON(json: any): Me {
-  return MeFromJSONTyped(json, false);
+    return MeFromJSONTyped(json, false);
 }
 
 export function MeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Me {
-  if (json === undefined || json === null) {
-    return json;
-  }
-  return {
-    userId: json["user_id"],
-    emoji: !exists(json, "emoji") ? undefined : json["emoji"],
-    bgColor: !exists(json, "bg_color") ? undefined : json["bg_color"],
-    email: json["email"],
-    inviteCode: json["invite_code"],
-    username: json["username"],
-    bio: !exists(json, "bio") ? undefined : json["bio"],
-    verified: json["verified"],
-  };
+    if (json === undefined || json === null) {
+        return json;
+    }
+    return {
+        userId: json["user_id"],
+        emoji: !exists(json, "emoji") ? undefined : json["emoji"],
+        bgColor: !exists(json, "bg_color") ? undefined : json["bg_color"],
+        email: json["email"],
+        inviteCode: json["invite_code"],
+        username: json["username"],
+        bio: !exists(json, "bio") ? undefined : json["bio"],
+        verified: json["verified"],
+    };
 }
 
 export function MeToJSON(value?: Me | null): any {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (value === null) {
-    return null;
-  }
-  return {
-    user_id: value.userId,
-    emoji: value.emoji,
-    bg_color: value.bgColor,
-    email: value.email,
-    invite_code: value.inviteCode,
-    username: value.username,
-    bio: value.bio,
-    verified: value.verified,
-  };
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        user_id: value.userId,
+        emoji: value.emoji,
+        bg_color: value.bgColor,
+        email: value.email,
+        invite_code: value.inviteCode,
+        username: value.username,
+        bio: value.bio,
+        verified: value.verified,
+    };
 }
