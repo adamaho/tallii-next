@@ -66,9 +66,6 @@ const Event: React.FunctionComponent<EventProps> = ({ event, members }) => {
             <p className="p mt-2">{event.description}</p>
             <div>
                 <Teams event={event} members={members} />
-                <Teams event={event} members={members} />
-                <Teams event={event} members={members} />
-                <Teams event={event} members={members} />
                 <Comments event={event} />
             </div>
         </div>

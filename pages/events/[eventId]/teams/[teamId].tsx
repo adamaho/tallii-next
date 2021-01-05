@@ -100,10 +100,16 @@ export default function TeamId({
                     </button>
                     <Menu isOpen={isOpen} onClose={handleLeaveClick}>
                         <div className="divide-y divide-gray-700">
-                            <p className="p text-center py-2">Would you like to leave this Team?</p>
+                            <p className="p text-center py-2">
+                                Would you like to leave this Team?
+                            </p>
                             <div className="p-2">
-                                <button className="btn-danger w-full">Leave</button>
-                                <button className="btn-cancel w-full mt-4">Cancel</button>
+                                <button className="btn-danger w-full">
+                                    Leave
+                                </button>
+                                <button className="btn-cancel w-full mt-4">
+                                    Cancel
+                                </button>
                             </div>
                         </div>
                     </Menu>

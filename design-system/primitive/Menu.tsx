@@ -8,26 +8,19 @@ interface MenuProps {
     onClose: () => void;
 }
 
-const variants = {
-    open: {
-        opacity: 1,
-    },
-    closed: {
-        opacity: 0,
-    },
-};
-
 export const Menu: React.FunctionComponent<MenuProps> = ({
     children,
     isOpen,
     onClose,
 }) => {
+    const [_, forceRerender] = React.useState<null>();
+
+    // init ref to the menu item to get height
     const menuRef = React.useRef<HTMLDivElement>(null);
 
     const handleClose = React.useCallback(() => {
         onClose();
     }, [onClose]);
-
 
     // disable scrolling when the menu is open
     // NOTE: For now this doesn't work in safari on iOS
@@ -41,28 +34,43 @@ export const Menu: React.FunctionComponent<MenuProps> = ({
         }
     }, [isOpen]);
 
+    // force a rerender in order to cause the ref to init
+    React.useEffect(() => {
+        setTimeout(() => {
+            forceRerender(null);
+        }, 0);
+    }, []);
+
     return (
         <Portal>
-            {isOpen && (
-                <div className="fixed top-0 left-0 bg-gray-900 bg-opacity-80 h-full w-full z-0 p-4 pb-12" />
-            )}
+            <AnimatePresence initial={false}>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed top-0 left-0 bg-gray-900 bg-opacity-80 h-full w-full z-0 p-4 pb-12"
+                    />
+                )}
+            </AnimatePresence>
             <motion.div
                 ref={menuRef}
                 onClick={handleClose}
                 variants={{
                     open: {
                         opacity: 1,
-                        y: 0
+                        y: 0,
                     },
                     closed: {
                         opacity: 0,
                         y: menuRef.current ? menuRef.current.offsetHeight : 0,
-                    }
+                    },
                 }}
                 initial="closed"
                 animate={isOpen ? "open" : "closed"}
                 exit="closed"
-                transition={{ ease: [.49,.08,.12,1.06], duration: 0.2 }}
+                transition={{ ease: [0.49, 0.08, 0.12, 1.06], duration: 0.2 }}
                 className="fixed bottom-0 left-0 w-full z-10 p-4 pb-12"
             >
                 <div className="bg-gray-800 rounded-lg shadow-lg">
