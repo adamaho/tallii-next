@@ -1,32 +1,36 @@
 import * as React from "react";
 
-import {RemoveEventTeamMemberRequest, Team} from "../../../../api/tallii";
-import {Menu} from "../../../../design-system";
-import {useMutation} from "react-query";
-import {talliiAPI} from "../../../../api";
-import {useRouter} from "next/router";
-import {decodeCookie} from "../../../../utils";
-
-interface LeaveButtonProps {
-    team: Team;
-}
+import { RemoveEventTeamMemberRequest, Team } from "../../../../api/tallii";
+import { Menu } from "../../../../design-system";
+import {useMutation, useQueryClient} from "react-query";
+import { talliiAPI } from "../../../../api";
+import { useRouter } from "next/router";
+import { decodeCookie } from "../../../../utils";
 
 // init the api client
 const api = talliiAPI();
 
-export const LeaveButton: React.FunctionComponent<LeaveButtonProps> = ({ team }) => {
+export const LeaveButton: React.FunctionComponent = () => {
+
     // init router
     const router = useRouter();
+
+    // init queryClient
+    const queryClient = useQueryClient();
 
     // init the menu state
     const [isOpen, setIsOpen] = React.useState<boolean>();
 
     // init mutation to leave team
-    const { mutate } = useMutation((request: RemoveEventTeamMemberRequest) => api.removeEventTeamMember.call(api, request), {
-        onSuccess: () => {
-            router.push(`/events/${team.eventId}`);
+    const { mutate } = useMutation(
+        (request: RemoveEventTeamMemberRequest) =>
+            api.removeEventTeamMember.call(api, request),
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries(["EVENT_TEAM_MEMBERS", Number(router.query.teamId)]);
+            },
         }
-    });
+    );
 
     // handle the click of the trigger
     const handleLeaveClick = React.useCallback(() => {
@@ -45,7 +49,11 @@ export const LeaveButton: React.FunctionComponent<LeaveButtonProps> = ({ team })
             const me = decodeCookie();
 
             // remove me from the event team
-            await mutate({ eventId: team.eventId, teamId: team.teamId, userId: me.userId });
+            await mutate({
+                eventId: Number(router.query.eventId),
+                teamId: Number(router.query.teamId),
+                userId: me.userId,
+            });
         } catch (error) {
             console.warn(error);
         }
@@ -65,10 +73,16 @@ export const LeaveButton: React.FunctionComponent<LeaveButtonProps> = ({ team })
                         Would you like to leave this Team?
                     </p>
                     <div className="p-2">
-                        <button onClick={handleLeaveMenuClick} className="btn-danger w-full">
+                        <button
+                            onClick={handleLeaveMenuClick}
+                            className="btn-danger w-full"
+                        >
                             Leave
                         </button>
-                        <button onClick={handleCancelMenuClick} className="btn-cancel w-full mt-4">
+                        <button
+                            onClick={handleCancelMenuClick}
+                            className="btn-cancel w-full mt-4"
+                        >
                             Cancel
                         </button>
                     </div>
@@ -76,4 +90,4 @@ export const LeaveButton: React.FunctionComponent<LeaveButtonProps> = ({ team })
             </Menu>
         </>
     );
-}
+};

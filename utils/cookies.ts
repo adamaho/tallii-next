@@ -46,6 +46,8 @@ export const decodeCookie = (
 
         const token = cookies.get("authToken");
 
+        console.log(token);
+
         decodedToken = jwtDecode(token);
     }
 

@@ -70,6 +70,12 @@ export interface AddEventTeamMemberRequest {
     userId: number;
 }
 
+export interface ChangeTeamRequest {
+    eventId: number;
+    teamId: number;
+    userId: number;
+}
+
 export interface CheckInviteCodeRequest {
     inviteCode: string;
 }
@@ -263,7 +269,7 @@ export class DefaultApi extends runtime.BaseAPI {
                     `{${"user_id"}}`,
                     encodeURIComponent(String(requestParameters.userId))
                 ),
-            method: "PUT",
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
         });
@@ -280,6 +286,78 @@ export class DefaultApi extends runtime.BaseAPI {
         requestParameters: AddEventTeamMemberRequest
     ): Promise<Success> {
         const response = await this.addEventTeamMemberRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     * Changes the team of the provided user to the matching team id in path
+     */
+    async changeTeamRaw(
+        requestParameters: ChangeTeamRequest
+    ): Promise<runtime.ApiResponse<Success>> {
+        if (
+            requestParameters.eventId === null ||
+            requestParameters.eventId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "eventId",
+                "Required parameter requestParameters.eventId was null or undefined when calling changeTeam."
+            );
+        }
+
+        if (
+            requestParameters.teamId === null ||
+            requestParameters.teamId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "teamId",
+                "Required parameter requestParameters.teamId was null or undefined when calling changeTeam."
+            );
+        }
+
+        if (
+            requestParameters.userId === null ||
+            requestParameters.userId === undefined
+        ) {
+            throw new runtime.RequiredError(
+                "userId",
+                "Required parameter requestParameters.userId was null or undefined when calling changeTeam."
+            );
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/v1/events/{event_id}/teams/{team_id}/members/{user_id}`
+                .replace(
+                    `{${"event_id"}}`,
+                    encodeURIComponent(String(requestParameters.eventId))
+                )
+                .replace(
+                    `{${"team_id"}}`,
+                    encodeURIComponent(String(requestParameters.teamId))
+                )
+                .replace(
+                    `{${"user_id"}}`,
+                    encodeURIComponent(String(requestParameters.userId))
+                ),
+            method: "PUT",
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) =>
+            SuccessFromJSON(jsonValue)
+        );
+    }
+
+    /**
+     * Changes the team of the provided user to the matching team id in path
+     */
+    async changeTeam(requestParameters: ChangeTeamRequest): Promise<Success> {
+        const response = await this.changeTeamRaw(requestParameters);
         return await response.value();
     }
 
