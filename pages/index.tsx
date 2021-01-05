@@ -6,7 +6,7 @@ import { LogoLarge } from "../design-system/primitive/icons/LogoLarge";
 
 export default function Welcome() {
     return (
-        <div className="h-full w-full p-4">
+        <div className="view">
             <Head>
                 <title>Tallii - Welcome</title>
             </Head>

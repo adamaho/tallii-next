@@ -7,7 +7,7 @@ import { LogoSmall } from "../../design-system/primitive/icons/LogoSmall";
 
 export default function Signup() {
     return (
-        <div className="h-full w-full p-4">
+        <div className="view">
             <Head>
                 <title>Tallii - Signup</title>
             </Head>

@@ -5,6 +5,7 @@ import { talliiAPI } from "../../../../api";
 import { BackButton, Menu } from "../../../../design-system";
 import { TeamMembers } from "../_components/_TeamMembers";
 import { decodeCookie } from "../../../../utils";
+import {LeaveButton} from "./_LeaveButton";
 
 // init tallii api
 const api = talliiAPI();
@@ -59,14 +60,6 @@ export default function TeamId({
     isEventMember,
     isEventTeamMember,
 }) {
-    // init the menu state
-    const [isOpen, setIsOpen] = React.useState<boolean>();
-
-    // handle the click of the trigger
-    const handleLeaveClick = React.useCallback(() => {
-        setIsOpen((current) => !current);
-    }, []);
-
     return (
         <div className="view">
             <BackButton />
@@ -91,29 +84,7 @@ export default function TeamId({
                 isEventTeamMember={isEventTeamMember}
             />
             {isEventTeamMember && (
-                <>
-                    <button
-                        className="btn-danger w-full mt-8"
-                        onClick={handleLeaveClick}
-                    >
-                        Leave Team
-                    </button>
-                    <Menu isOpen={isOpen} onClose={handleLeaveClick}>
-                        <div className="divide-y divide-gray-700">
-                            <p className="p text-center py-2">
-                                Would you like to leave this Team?
-                            </p>
-                            <div className="p-2">
-                                <button className="btn-danger w-full">
-                                    Leave
-                                </button>
-                                <button className="btn-cancel w-full mt-4">
-                                    Cancel
-                                </button>
-                            </div>
-                        </div>
-                    </Menu>
-                </>
+                <LeaveButton team={team} />
             )}
         </div>
     );

@@ -8,7 +8,7 @@ import { Form } from "./_loginForm";
 
 export default function Login() {
     return (
-        <div className="h-full w-full p-4 flex flex-col justify-between">
+        <div className="view flex flex-col justify-between">
             <Head>
                 <title>Tallii - Login</title>
             </Head>

@@ -13,6 +13,7 @@ export const Menu: React.FunctionComponent<MenuProps> = ({
     isOpen,
     onClose,
 }) => {
+    // forces a rerender in order to get ref loaded
     const [_, forceRerender] = React.useState<null>();
 
     // init ref to the menu item to get height
