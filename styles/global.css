@@ -21,6 +21,7 @@ body {
 
 #__next {
     min-height: 100%;
+    height: 100%;
     width: 100%;
     overscroll-behavior: none;
     background: #111827;
@@ -46,6 +47,10 @@ button:focus {
 
     .btn-primary {
         @apply bg-green-500 bg-opacity-30 text-green-500;
+    }
+
+    .btn-primary-tap {
+        @apply bg-opacity-50;
     }
 
     .btn-danger {

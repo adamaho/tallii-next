@@ -21,7 +21,7 @@ export const BackButton: React.FunctionComponent = () => {
         <button
             className={`${
                 isPressed ? "bg-gray-50 bg-opacity-10" : ""
-            } inline-block mb-4 -ml-2 rounded-full p-1 border-box`}
+            } inline-block -ml-2 rounded-full p-1 border-box`}
             onClick={handleBack}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
