@@ -34,18 +34,10 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
             eventId: Number(eventId),
         });
 
-        // get me from the cookie
-        const me = decodeCookie(context);
-
-        // filter me out of the members
-        const membersExcludingMe = members.filter(
-            (m) => m.userId !== me.userId
-        );
-
         return {
             props: {
                 event,
-                members: membersExcludingMe,
+                members,
             },
         };
     } catch (err) {

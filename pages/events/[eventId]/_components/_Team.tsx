@@ -18,7 +18,8 @@ interface TeamProps {
 const api = talliiAPI();
 
 export const Team: React.FunctionComponent<TeamProps> = ({ event, team }) => {
-    const { data: teamMembers, isLoading, isError } = useQuery(
+    // init query for getting team members
+    const { data: teamMembers } = useQuery(
         ["EVENT_TEAM_MEMBERS", team.teamId],
         () =>
             api.getEventTeamMembers({
@@ -27,6 +28,7 @@ export const Team: React.FunctionComponent<TeamProps> = ({ event, team }) => {
             })
     );
 
+    // init touch state for team item
     const {
         isPressed,
         onTouchStart,

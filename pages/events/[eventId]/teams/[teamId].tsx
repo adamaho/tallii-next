@@ -3,12 +3,13 @@ import { GetServerSidePropsContext } from "next";
 
 import { talliiAPI } from "../../../../api";
 import { BackButton, Menu } from "../../../../design-system";
-import { TeamMembers } from "./_TeamMembers";
+import { TeamMembers } from "./_components/_TeamMembers";
 import { decodeCookie } from "../../../../utils";
-import { LeaveButton } from "./_LeaveButton";
+import { LeaveButton } from "./_components/_LeaveButton";
 import { QueryClient, useQuery, useQueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import { useRouter } from "next/router";
+import { Score } from "./_components/_Score";
 
 // init tallii api
 const api = talliiAPI();
@@ -112,17 +113,7 @@ export default function TeamId({ me, members }) {
             {isEventMember && (
                 <p className="text-center text-blue-500">Change Name</p>
             )}
-            <div className="flex justify-center mt-12">
-                <div className="card">
-                    <input
-                        disabled={!isEventMember}
-                        className="text-6xl text-center max-w-xs font-bold bg-transparent text-gray-50 w-min focus:outline-none py-4"
-                        defaultValue={team.score}
-                        type="number"
-                        pattern="\d*"
-                    />
-                </div>
-            </div>
+            <Score isEventMember={isEventMember} team={team} />
             <TeamMembers
                 teamMembers={teamMembers}
                 isEventMember={isEventMember}

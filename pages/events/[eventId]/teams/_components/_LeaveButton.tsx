@@ -1,11 +1,11 @@
 import * as React from "react";
 
-import { RemoveEventTeamMemberRequest } from "../../../../api/tallii";
-import {Button, Menu} from "../../../../design-system";
+import { RemoveEventTeamMemberRequest } from "../../../../../api/tallii";
+import { Button, Menu } from "../../../../../design-system";
 import { useMutation, useQueryClient } from "react-query";
-import { talliiAPI } from "../../../../api";
+import { talliiAPI } from "../../../../../api";
 import { useRouter } from "next/router";
-import { decodeCookie } from "../../../../utils";
+import { decodeCookie } from "../../../../../utils";
 
 // init the api client
 const api = talliiAPI();

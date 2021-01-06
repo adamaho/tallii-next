@@ -3,12 +3,12 @@ import * as React from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { useRouter } from "next/router";
 
-import { User, ChangeTeamRequest } from "../../../../api/tallii";
-import { Avatar, PlusCircleButton } from "../../../../design-system";
-import { useTouchState } from "../../../../hooks";
-import { decodeCookie } from "../../../../utils";
+import { User, ChangeTeamRequest } from "../../../../../api/tallii";
+import { Avatar, PlusCircleButton } from "../../../../../design-system";
+import { useTouchState } from "../../../../../hooks";
+import { decodeCookie } from "../../../../../utils";
 
-import { talliiAPI } from "../../../../api";
+import { talliiAPI } from "../../../../../api";
 
 interface TeamMembersProps {
     teamMembers: User[];
@@ -56,6 +56,7 @@ export const TeamMembers: React.FunctionComponent<TeamMembersProps> = ({
             // get me from cookie
             const me = decodeCookie();
 
+            console.log("erere");
             // change team
             await changeTeam({
                 eventId: Number(query.eventId),
