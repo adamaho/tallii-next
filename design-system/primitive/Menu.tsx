@@ -51,13 +51,13 @@ export const Menu: React.FunctionComponent<MenuProps> = ({
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
+                        onClick={handleClose}
                         className="fixed top-0 left-0 bg-gray-900 bg-opacity-80 h-full w-full z-0 p-4 pb-12"
                     />
                 )}
             </AnimatePresence>
             <motion.div
                 ref={menuRef}
-                onClick={handleClose}
                 variants={{
                     open: {
                         opacity: 1,
@@ -72,7 +72,7 @@ export const Menu: React.FunctionComponent<MenuProps> = ({
                 animate={isOpen ? "open" : "closed"}
                 exit="closed"
                 transition={{ ease: [0.49, 0.08, 0.12, 1.06], duration: 0.2 }}
-                className="fixed bottom-0 left-0 w-full z-10 p-4 pb-12"
+                className="fixed bottom-0 left-0 w-full z-10 p-4 pb-8"
             >
                 <div className="bg-gray-800 rounded-lg shadow-lg">
                     {children}

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { useMutation, useQueryClient } from "react-query";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 import { User, ChangeTeamRequest } from "../../../../api/tallii";
 import { Avatar, PlusCircleButton } from "../../../../design-system";
@@ -9,7 +9,6 @@ import { useTouchState } from "../../../../hooks";
 import { decodeCookie } from "../../../../utils";
 
 import { talliiAPI } from "../../../../api";
-
 
 interface TeamMembersProps {
     teamMembers: User[];

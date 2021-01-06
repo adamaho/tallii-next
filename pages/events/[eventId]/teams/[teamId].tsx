@@ -3,12 +3,12 @@ import { GetServerSidePropsContext } from "next";
 
 import { talliiAPI } from "../../../../api";
 import { BackButton, Menu } from "../../../../design-system";
-import { TeamMembers } from "../_components/_TeamMembers";
+import { TeamMembers } from "./_TeamMembers";
 import { decodeCookie } from "../../../../utils";
 import { LeaveButton } from "./_LeaveButton";
-import {QueryClient, useQuery, useQueryClient} from "react-query";
+import { QueryClient, useQuery, useQueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 // init tallii api
 const api = talliiAPI();
@@ -27,11 +27,13 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     );
 
     // prefetch event team members in the query client
-    await queryClient.prefetchQuery(["EVENT_TEAM_MEMBERS", Number(teamId)], () =>
-        api.getEventTeamMembers({
-            eventId: Number(eventId),
-            teamId: Number(teamId),
-        })
+    await queryClient.prefetchQuery(
+        ["EVENT_TEAM_MEMBERS", Number(teamId)],
+        () =>
+            api.getEventTeamMembers({
+                eventId: Number(eventId),
+                teamId: Number(teamId),
+            })
     );
 
     const me = decodeCookie(context);
@@ -72,18 +74,15 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 }
 
 export default function TeamId({ me, members }) {
-
     // init router for query
     const { query } = useRouter();
 
     // init query state from the server to enable refetching
-    const { data: team } = useQuery(
-        ["EVENT_TEAM", Number(query.teamId)],
-        () =>
-            api.getEventTeam({
-                eventId: team.eventId,
-                teamId: team.teamId,
-            })
+    const { data: team } = useQuery(["EVENT_TEAM", Number(query.teamId)], () =>
+        api.getEventTeam({
+            eventId: team.eventId,
+            teamId: team.teamId,
+        })
     );
 
     // init query state from the server to enable refetching
@@ -101,10 +100,8 @@ export default function TeamId({ me, members }) {
         return members.some((m) => m.userId === me.userId);
     }, [members, me]);
 
-
     // calculate if user is a member of the event of the team
     const isEventTeamMember = React.useMemo(() => {
-
         return teamMembers.some((m) => m.userId === me.userId);
     }, [teamMembers, me]);
 

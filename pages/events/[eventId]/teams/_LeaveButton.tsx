@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import { RemoveEventTeamMemberRequest, Team } from "../../../../api/tallii";
-import { Menu } from "../../../../design-system";
-import {useMutation, useQueryClient} from "react-query";
+import { RemoveEventTeamMemberRequest } from "../../../../api/tallii";
+import {Button, Menu} from "../../../../design-system";
+import { useMutation, useQueryClient } from "react-query";
 import { talliiAPI } from "../../../../api";
 import { useRouter } from "next/router";
 import { decodeCookie } from "../../../../utils";
@@ -11,7 +11,6 @@ import { decodeCookie } from "../../../../utils";
 const api = talliiAPI();
 
 export const LeaveButton: React.FunctionComponent = () => {
-
     // init router
     const router = useRouter();
 
@@ -19,7 +18,7 @@ export const LeaveButton: React.FunctionComponent = () => {
     const queryClient = useQueryClient();
 
     // init the menu state
-    const [isOpen, setIsOpen] = React.useState<boolean>();
+    const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
     // init mutation to leave team
     const { mutate } = useMutation(
@@ -27,20 +26,23 @@ export const LeaveButton: React.FunctionComponent = () => {
             api.removeEventTeamMember.call(api, request),
         {
             onSuccess: () => {
-                queryClient.invalidateQueries(["EVENT_TEAM_MEMBERS", Number(router.query.teamId)]);
+                queryClient.invalidateQueries([
+                    "EVENT_TEAM_MEMBERS",
+                    Number(router.query.teamId),
+                ]);
             },
         }
     );
 
     // handle the click of the trigger
     const handleLeaveClick = React.useCallback(() => {
-        setIsOpen((current) => !current);
-    }, []);
+        setIsOpen(true);
+    }, [setIsOpen]);
 
     // handle cancel menu click
     const handleCancelMenuClick = React.useCallback(() => {
         setIsOpen(false);
-    }, []);
+    }, [setIsOpen]);
 
     // handle leave menu click
     const handleLeaveMenuClick = React.useCallback(async () => {
@@ -61,30 +63,33 @@ export const LeaveButton: React.FunctionComponent = () => {
 
     return (
         <>
-            <button
+            <Button
                 className="btn-danger w-full mt-8"
+                pressedClassName="btn-danger-tap"
                 onClick={handleLeaveClick}
             >
                 Leave Team
-            </button>
-            <Menu isOpen={isOpen} onClose={handleLeaveClick}>
+            </Button>
+            <Menu isOpen={isOpen} onClose={handleCancelMenuClick}>
                 <div className="divide-y divide-gray-700">
                     <p className="p text-center py-2">
                         Would you like to leave this Team?
                     </p>
                     <div className="p-2">
-                        <button
+                        <Button
                             onClick={handleLeaveMenuClick}
                             className="btn-danger w-full"
+                            pressedClassName="btn-danger-tap"
                         >
                             Leave
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             onClick={handleCancelMenuClick}
-                            className="btn-cancel w-full mt-4"
+                            className="btn btn-cancel w-full mt-4"
+                            pressedClassName="btn-cancel-tap"
                         >
                             Cancel
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </Menu>
