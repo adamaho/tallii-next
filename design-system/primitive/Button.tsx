@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useTouchState } from "../../hooks";
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     pressedClassName?: string;
 }

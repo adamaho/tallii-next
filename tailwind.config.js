@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       borderRadius: ['first', 'last'],
       margin: ['first', 'last'],
+      textColor: ['disabled']
     },
   },
   plugins: [],

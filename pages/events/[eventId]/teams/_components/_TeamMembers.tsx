@@ -55,8 +55,6 @@ export const TeamMembers: React.FunctionComponent<TeamMembersProps> = ({
         try {
             // get me from cookie
             const me = decodeCookie();
-
-            console.log("erere");
             // change team
             await changeTeam({
                 eventId: Number(query.eventId),

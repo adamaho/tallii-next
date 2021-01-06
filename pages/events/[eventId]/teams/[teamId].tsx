@@ -10,6 +10,7 @@ import { QueryClient, useQuery, useQueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import { useRouter } from "next/router";
 import { Score } from "./_components/_Score";
+import { Name } from "./_components/_Name";
 
 // init tallii api
 const api = talliiAPI();
@@ -109,10 +110,7 @@ export default function TeamId({ me, members }) {
     return (
         <div className="view">
             <BackButton />
-            <h1 className="h1 text-center">{team.name}</h1>
-            {isEventMember && (
-                <p className="text-center text-blue-500">Change Name</p>
-            )}
+            <Name team={team} isEventMember={isEventMember} />
             <Score isEventMember={isEventMember} team={team} />
             <TeamMembers
                 teamMembers={teamMembers}

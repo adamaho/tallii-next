@@ -56,7 +56,7 @@ export const Score: React.FunctionComponent<ScoreProps> = ({
                     teamId: Number(teamId),
                     updateTeamRequest: {
                         name: team.name,
-                        winner: false,
+                        winner: team.winner,
                         score: Number(score),
                     },
                 });
