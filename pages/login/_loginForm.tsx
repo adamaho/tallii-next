@@ -39,7 +39,7 @@ export const Form: React.FunctionComponent = () => {
                 setAuthCookies(data);
 
                 // push route to home
-                router.push("/prototypes");
+                router.push("/events/1");
             },
         }
     );

@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps }) {
                 <Head>
                     <title>Tallii</title>
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    <link rel="manifest" href="/manifest.json" />
+                    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
                     <meta
                         name="viewport"
                         content="width=device-width, height=device-height"
