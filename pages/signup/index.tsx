@@ -13,7 +13,6 @@ export default function Signup() {
             </Head>
 
             <div className="mt-10">
-                <LogoSmall />
                 <h1 className="text-gray-50 font-bold text-4xl mt-3">Signup</h1>
                 <p className="text-gray-500 mt-1">Let's get started.</p>
             </div>

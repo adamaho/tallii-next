@@ -14,7 +14,6 @@ export default function Login() {
             </Head>
 
             <div className="mt-10">
-                <LogoSmall />
                 <h1 className="text-gray-50 font-bold text-4xl mt-3">Login</h1>
                 <p className="text-gray-500 mt-1">
                     What is your email and password?

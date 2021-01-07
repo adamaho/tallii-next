@@ -60,13 +60,13 @@ export const CommentInput: React.FunctionComponent<CommentInputProps> = ({ me })
     }, [textareaValue]);
 
     return (
-        <div className="w-full flex items-start border-b border-solid border-gray-700 pb-2">
+        <div className="w-full flex items-start border-b border-solid border-gray-700 pb-2 flex-shrink-0">
             <Avatar className="flex-shrink-0 mr-2" bgColor={me.bgColor} emoji={me.emoji} circleSize="10" emojiSize="0.8rem" />
             <Textarea value={textareaValue} placeholder="Leave a comment" onChange={handleChange} />
             <AnimatePresence>
                 {textareaValue !== "" && (
                     <motion.div initial={{ x: 10 }} animate={{ x: 0 }} exit={{ x: 5 }} className="self-end">
-                        <Button onClick={handleAddComment} className="btn-primary flex-shrink-0 ml-2" pressedClassName="btn-primary-tap">
+                        <Button onClick={handleAddComment} className="btn-cancel flex-shrink-0 ml-2" pressedClassName="btn-cancel-tap">
                             <Icon.Comment />
                         </Button>
                     </motion.div>

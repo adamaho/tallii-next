@@ -57,7 +57,7 @@ export default function Comments({ me }) {
 
     return (
         <div className="view flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-4 flex-shrink-0">
                 <BackButton />
                 <h5 className="h5 -ml-8">Comments</h5>
                 <div />
