@@ -1,10 +1,9 @@
 import * as React from "react";
-import {
-    Avatar,
-    AvatarCollection,
-    Icon,
-} from "../../../../design-system/primitive";
+
 import Link from "next/link";
+
+import { Avatar, AvatarCollection, Icon } from "../../../../design-system";
+
 import { Event as EventType, User } from "../../../../api/tallii";
 
 interface MembersProps {
@@ -67,7 +66,7 @@ export const Members: React.FunctionComponent<MembersProps> = ({
 
     return (
         <Link href={`/events/${event.eventId}/members`}>
-            <div className="flex items-center mb-2">{children}</div>
+            <div className="flex items-center mb-2 mt-4 w-max">{children}</div>
         </Link>
     );
 };

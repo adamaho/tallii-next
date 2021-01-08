@@ -108,7 +108,7 @@ export default function TeamId({ me, members }) {
     }, [teamMembers, me]);
 
     return (
-        <div className="view">
+        <div>
             <BackButton />
             <Name team={team} isEventMember={isEventMember} />
             <Score isEventMember={isEventMember} team={team} />

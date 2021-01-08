@@ -41,7 +41,7 @@ export const Team: React.FunctionComponent<TeamProps> = ({ event, team }) => {
             <div
                 className={`${
                     isPressed
-                        ? "bg-gray-700 bg-opacity-20 first:rounded-tl-lg first:rounded-tr-lg last:rounded-bl-lg last:rounded-br-lg"
+                        ? "bg-gray-700 bg-opacity-30 first:rounded-tl-lg first:rounded-tr-lg last:rounded-bl-lg last:rounded-br-lg"
                         : ""
                 } p-3 flex items-center justify-between`}
                 onTouchStart={onTouchStart}

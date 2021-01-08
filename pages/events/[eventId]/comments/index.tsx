@@ -1,15 +1,15 @@
 import * as React from "react";
 
-import {QueryClient, useQuery} from "react-query";
-import {dehydrate} from "react-query/hydration";
-import {useRouter} from "next/router";
+import { QueryClient, useQuery } from "react-query";
+import { dehydrate } from "react-query/hydration";
+import { useRouter } from "next/router";
 
-import {BackButton} from "../../../../design-system";
+import { BackButton } from "../../../../design-system";
 
 import { CommentsList } from "./_components/_CommentsList";
-import {CommentInput} from "./_components/_CommentInput";
+import { CommentInput } from "./_components/_CommentInput";
 
-import {talliiAPI} from "../../../../api";
+import { talliiAPI } from "../../../../api";
 
 // init tallii api
 const api = talliiAPI();
@@ -28,7 +28,10 @@ export async function getServerSideProps(context) {
     );
 
     try {
-        const [comments, me] = await Promise.all([api.getEventComments({ eventId: Number(eventId) }), api.getMe()]);
+        const [comments, me] = await Promise.all([
+            api.getEventComments({ eventId: Number(eventId) }),
+            api.getMe(),
+        ]);
 
         return {
             props: {
@@ -47,16 +50,19 @@ export async function getServerSideProps(context) {
 }
 
 export default function Comments({ me }) {
-
     // init the router to get the eventId
-    const { query: { eventId }} = useRouter();
+    const {
+        query: { eventId },
+    } = useRouter();
 
     // init query to get comments
-    const { data: comments, isLoading, isError } = useQuery(["EVENT_COMMENTS", Number(eventId)], () =>
-        api.getEventComments({ eventId: Number(eventId) }));
+    const { data: comments, isLoading, isError } = useQuery(
+        ["EVENT_COMMENTS", Number(eventId)],
+        () => api.getEventComments({ eventId: Number(eventId) })
+    );
 
     return (
-        <div className="view flex flex-col justify-between">
+        <div className="flex flex-col justify-between">
             <div className="flex items-center justify-between mb-4 flex-shrink-0">
                 <BackButton />
                 <h5 className="h5 -ml-8">Comments</h5>
@@ -65,5 +71,5 @@ export default function Comments({ me }) {
             <CommentInput me={me} />
             <CommentsList comments={comments} />
         </div>
-    )
+    );
 }

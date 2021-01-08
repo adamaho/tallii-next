@@ -51,7 +51,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 const Event: React.FunctionComponent<EventProps> = ({ event, members }) => {
     return (
-        <div className="view">
+        <div>
             <BackButton />
             <Members event={event} members={members} />
             <h2 className="h2">{event.name}</h2>

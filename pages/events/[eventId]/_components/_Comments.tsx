@@ -2,13 +2,12 @@ import * as React from "react";
 
 import Link from "next/link";
 
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 
 import { Event } from "../../../../api/tallii";
 import { talliiAPI } from "../../../../api";
 import { Icon } from "../../../../design-system";
-
 
 interface CommentProps {
     event: Event;
@@ -18,9 +17,10 @@ interface CommentProps {
 const api = talliiAPI();
 
 export const Comments: React.FunctionComponent<CommentProps> = ({ event }) => {
-
     // init instance of the router
-    const { query: { eventId }} = useRouter();
+    const {
+        query: { eventId },
+    } = useRouter();
 
     // init query to get comments
     const { data: comments, isLoading, isError } = useQuery(

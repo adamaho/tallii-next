@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import {Team, UpdateEventTeamRequest} from "../../../../../api/tallii";
+import { Team, UpdateEventTeamRequest } from "../../../../../api/tallii";
 import { Button } from "../../../../../design-system";
-import {talliiAPI} from "../../../../../api";
-import {useMutation, useQueryClient} from "react-query";
-import {useRouter} from "next/router";
+import { talliiAPI } from "../../../../../api";
+import { useMutation, useQueryClient } from "react-query";
+import { useRouter } from "next/router";
 
 interface NameProps {
     team: Team;
@@ -22,7 +22,9 @@ export const Name: React.FunctionComponent<NameProps> = ({
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     // init instance of router
-    const { query: { eventId, teamId }} = useRouter();
+    const {
+        query: { eventId, teamId },
+    } = useRouter();
 
     // init the query client
     const queryClient = useQueryClient();
@@ -34,12 +36,16 @@ export const Name: React.FunctionComponent<NameProps> = ({
     const [isChangingName, setIsChangingName] = React.useState<boolean>(false);
 
     // init mutation to change the name of the team
-    const { mutate } = useMutation((request: UpdateEventTeamRequest) => api.updateEventTeam.call(api, request), {
-        onSuccess: () => {
-            queryClient.invalidateQueries(["EVENT_TEAM", Number(teamId)]);
-            setIsChangingName(false);
+    const { mutate } = useMutation(
+        (request: UpdateEventTeamRequest) =>
+            api.updateEventTeam.call(api, request),
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries(["EVENT_TEAM", Number(teamId)]);
+                setIsChangingName(false);
+            },
         }
-    });
+    );
 
     // handle change name click
     const handleChangeNameClick = React.useCallback(() => {
@@ -49,7 +55,7 @@ export const Name: React.FunctionComponent<NameProps> = ({
         // wait for the input to not be disabled
         setTimeout(() => {
             inputRef.current.focus();
-        }, 0)
+        }, 0);
     }, [inputRef]);
 
     // handle cancel click
@@ -67,10 +73,10 @@ export const Name: React.FunctionComponent<NameProps> = ({
                 updateTeamRequest: {
                     name: inputValue,
                     score: team.score,
-                    winner: team.winner
-                }
-            })
-        } catch(err) {
+                    winner: team.winner,
+                },
+            });
+        } catch (err) {
             console.warn(err);
         }
     }, [team, inputValue]);
