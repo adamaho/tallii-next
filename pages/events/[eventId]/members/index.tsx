@@ -3,9 +3,11 @@ import * as React from "react";
 import {QueryClient, useQuery} from "react-query";
 import { dehydrate } from "react-query/hydration";
 
-import {Avatar, AvatarCollection, BackButton, Button, PlusCircleButton} from "../../../../design-system";
+import {Avatar} from "../../../../design-system";
 import { talliiAPI } from "../../../../api";
 import {useRouter} from "next/router";
+import {decodeCookie} from "../../../../utils";
+import {Header} from "./_components/_Header";
 
 // init tallii api
 const api = talliiAPI();
@@ -29,6 +31,8 @@ export async function getServerSideProps(context) {
         api.getEventMembers({ eventId: Number(eventId) })
     );
 
+    const me = decodeCookie(context);
+
     try {
         const [events, members] = await Promise.all([
             api.getEvent({ eventId: Number(eventId) }),
@@ -39,22 +43,27 @@ export async function getServerSideProps(context) {
             props: {
                 events,
                 members,
+                me,
                 dehydratedState: dehydrate(queryClient),
             },
         };
     } catch (err) {
         return {
             props: {
+                me,
                 dehydratedState: dehydrate(queryClient),
             },
         };
     }
 }
 
-export default function Members() {
+export default function Members({ me }) {
 
     // init instance of the router
     const { query: { eventId }} = useRouter();
+
+    // init state for editing
+    const [isEditing, setIsEditing] = React.useState<boolean>(false);
 
     // init query to get event
     const { data: event } = useQuery(
@@ -70,15 +79,7 @@ export default function Members() {
 
     return (
         <div>
-            <div className="flex items-center justify-between mb-8">
-                <BackButton />
-                <Button className="text-blue-500" pressedClassName="bg-gray-50 bg-opacity-10">Edit</Button>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-                <AvatarCollection users={members} />
-                <h1 className="h1 mt-2">{event.name}</h1>
-                <p className="p mt-2">{event.description}</p>
-            </div>
+            <Header isEditing={isEditing} setIsEditing={setIsEditing} members={members} event={event} />
             <div>
                 <div className="bg-gray-800 rounded-lg divide-y divide-gray-700 mt-8">
                     {members.map((m) => {
